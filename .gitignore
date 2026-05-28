@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# LaTeX
+*.log
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.synctex.gz
+
+# Editor
+.vscode/
+.idea/
+*.swp
