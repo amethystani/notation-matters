@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=black
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Data Availability Statement}\\[0.8em]
+  {\large Manuscript ID: DD-COM-05-2026-000309}\\[0.4em]
+  {\large \textit{Notation Matters: Inconsistency of LLMs in Molecular Representations}}\\[0.4em]
+  {\normalsize \textit{Digital Discovery}, Royal Society of Chemistry}\\[1.2em]
+  {\normalsize Animesh Mishra \quad|\quad am847@snu.edu.in \quad|\quad ORCID: 0009-0009-1770-6329}\\[0.3em]
+  {\normalsize 28 May 2026}
+\end{center}
+
+\hrule
+\vspace{1.5em}
+
+\section*{Public Repository}
+
+All experimental code, documentation, and article source are publicly available \textbf{without embargo} at:
+
+\begin{center}
+  \url{https://github.com/amethystani/notation-matters}
+\end{center}
+
+No authentication is required. The repository is licensed under the MIT License.
+
+\section*{Available Artifacts}
+
+\subsection*{Experimental Scripts}
+
+\begin{description}
+  \item[\texttt{07\_full\_esol\_phase1.py}] Phase 1 --- notation consistency evaluation across four molecular representations (SMILES, IUPAC, InChI, SELFIES) on 1072 molecules from the ESOL dataset.
+
+  \item[\texttt{08\_full\_esol\_phase2.py}] Phase 2 --- Ridge regression pooling of per-notation prediction heads; produces regression coefficients and cross-fold validation metrics.
+
+  \item[\texttt{run\_full\_benchmark.sh}] Batch pipeline that executes both phases sequentially with consistent random seeds.
+\end{description}
+
+\subsection*{Documentation and Article Source}
+
+\begin{itemize}
+  \item \texttt{README.md} --- Installation instructions, usage guide, and reproducibility notes
+  \item \texttt{main.tex} --- Complete 6-page LaTeX article source (Communication format)
+  \item \texttt{rsc.bib} --- Bibliography file with all DOIs verified
+  \item \texttt{DATA\_AVAILABILITY\_STATEMENT.md} --- Machine-readable version of this statement
+\end{itemize}
+
+\subsection*{Source Dataset}
+
+Ground-truth aqueous solubility values ($\log S$) are from the publicly available ESOL dataset:
+
+\begin{itemize}
+  \item Delaney, J.\,S. \textit{J.\ Chem.\ Inf.\ Comput.\ Sci.} \textbf{2004}, \textit{44}(3), 1000--1005.
+  \item DOI: \url{https://doi.org/10.1021/ci034243x}
+\end{itemize}
+
+IUPAC names and InChI identifiers are retrieved at runtime via the PubChem REST API (\url{https://pubchem.ncbi.nlm.nih.gov/}).
+
+\section*{Accessibility Summary}
+
+\vspace{0.5em}
+\begin{tabular}{>{\bfseries}lp{10cm}}
+  \toprule
+  Public access & Yes --- no login or request required \\
+  Embargo & None \\
+  Usage restrictions & None (MIT License) \\
+  Persistent URL & \url{https://github.com/amethystani/notation-matters} \\
+  Archived results & Generated at runtime by executing provided scripts \\
+  External dataset & ESOL via Delaney (2004), retrieved via PubChem REST API \\
+  \bottomrule
+\end{tabular}
+\vspace{0.5em}
+
+\section*{Reproducibility Notes}
+
+\begin{itemize}
+  \item LLM inference uses Qwen3.6 via Ollama; minor numerical variation is possible across hardware configurations.
+  \item All statistical tests (Fisher exact, Kruskal-Wallis, Mann-Whitney U, Wilcoxon signed-rank) use fixed random seeds for deterministic reproduction.
+  \item 56 of 1128 ESOL molecules are excluded due to missing PubChem IUPAC entries; final dataset comprises 1072 molecules.
+  \item 89.4\% of SMILES strings yield valid SELFIES representations; the remainder are excluded from SELFIES analyses.
+\end{itemize}
+
+\section*{Contact}
+
+Queries regarding code execution or reproducibility will be addressed within five business days:
+
+\begin{center}
+  Animesh Mishra \quad \texttt{am847@snu.edu.in}\\
+  School of Engineering, Shiv Nadar Institution of Eminence\\
+  \url{https://orcid.org/0009-0009-1770-6329}
+\end{center}
+
+\vspace{2em}
+\hrule
+\vspace{1em}
+
+\noindent\textit{I certify that all data and code referenced in the manuscript are publicly accessible at the repository above, without embargo or conditions of access, as of 28 May 2026.}
+
+\vspace{1.5em}
+\noindent\textbf{Animesh Mishra}\\
+28 May 2026
+
+\end{document}
