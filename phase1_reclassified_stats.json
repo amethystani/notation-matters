@@ -1,0 +1,99 @@
+{
+  "n_molecules": 1072,
+  "n_class_changed": 264,
+  "counts_original": {
+    "heterocyclic": 427,
+    "halogenated": 327,
+    "aromatic": 267,
+    "carboxylic/ester": 51
+  },
+  "counts_corrected": {
+    "heterocyclic": 427,
+    "alcohol/phenol": 177,
+    "aromatic": 267,
+    "aliphatic": 80,
+    "carboxylic/ester": 51,
+    "halogenated": 63,
+    "amine": 7
+  },
+  "classes_with_identical_membership": [
+    "aromatic",
+    "carboxylic/ester",
+    "heterocyclic"
+  ],
+  "class_stats": {
+    "carboxylic/ester": {
+      "n": 51,
+      "mean_spread": 2.152941176470588,
+      "median_spread": 2.0,
+      "pct_inconsistent": 92.15686274509804
+    },
+    "alcohol/phenol": {
+      "n": 177,
+      "mean_spread": 1.9299435028248588,
+      "median_spread": 1.7,
+      "pct_inconsistent": 88.13559322033898
+    },
+    "halogenated": {
+      "n": 63,
+      "mean_spread": 1.8777777777777778,
+      "median_spread": 1.7,
+      "pct_inconsistent": 80.95238095238095
+    },
+    "aromatic": {
+      "n": 267,
+      "mean_spread": 1.8243445692883895,
+      "median_spread": 1.7,
+      "pct_inconsistent": 86.89138576779027
+    },
+    "aliphatic": {
+      "n": 80,
+      "mean_spread": 1.62375,
+      "median_spread": 1.1,
+      "pct_inconsistent": 80.0
+    },
+    "heterocyclic": {
+      "n": 427,
+      "mean_spread": 1.436768149882904,
+      "median_spread": 1.3,
+      "pct_inconsistent": 90.63231850117096
+    },
+    "amine": {
+      "n": 7,
+      "mean_spread": 1.0999999999999999,
+      "median_spread": 1.0,
+      "pct_inconsistent": 85.71428571428571
+    }
+  },
+  "kruskal_wallis": {
+    "H": 42.84913851952529,
+    "pval": 1.2494210141044538e-07,
+    "n_groups": 7
+  },
+  "mannwhitney_vs_carboxylic": {
+    "alcohol/phenol": {
+      "U": 5170.0,
+      "pval": 0.05645651917500715
+    },
+    "aliphatic": {
+      "U": 2675.0,
+      "pval": 0.0013395512045475558
+    },
+    "amine": {
+      "U": 280.5,
+      "pval": 0.007588997911943773
+    },
+    "aromatic": {
+      "U": 8036.0,
+      "pval": 0.020375713392181492
+    },
+    "halogenated": {
+      "U": 1834.5,
+      "pval": 0.09663398210591606
+    },
+    "heterocyclic": {
+      "U": 15273.0,
+      "pval": 1.087640005211802e-06
+    }
+  }
+}

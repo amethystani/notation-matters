@@ -42,7 +42,7 @@ def classify(s: str) -> str:
     if re.search(r'[nNsS].*\d|\d.*[nNsS]', s):            return "heterocyclic"
     if re.search(r'[a-z]', s) and re.search(r'\d', s):    return "aromatic"
     if 'C(=O)O' in s or 'C(O)=O' in s or 'OC(=O)' in s: return "carboxylic"
-    if re.search(r'[FClBrI]', s):                          return "halogenated"
+    if re.search(r'Cl|Br|F|I', s):                         return "halogenated"
     if re.search(r'(?<![a-z])O(?![a-z=\(])', s):          return "alcohol"
     if re.search(r'(?<![a-z])N(?![a-z=\(+])', s):         return "amine"
     return "aliphatic"
@@ -84,37 +84,34 @@ def cos_sim(a, b):
 def patch_and_predict(model, tokenizer, head, src_hs, smiles_tgt,
                       layer_k, device):
     """
-    Forward-pass smiles_tgt with the CLS hidden state at layer_k
-    replaced by src_hs[layer_k]. Returns predicted logS from Ridge head.
+    Forward-pass smiles_tgt with the CLS hidden state at position layer_k
+    (0 = embedding output; 1..N_LAYERS = output of transformer layer k-1,
+    matching the indexing of out.hidden_states) replaced by src_hs[layer_k].
+    Returns predicted logS from Ridge head.
     """
     patch_v = torch.tensor(src_hs[layer_k],
                            dtype=torch.float32).to(device)
 
-    def make_hook(target_layer):
-        def hook(module, inp, output):
-            if isinstance(output, tuple):
-                hs, rest = output[0].clone(), output[1:]
-            else:
-                hs, rest = output.clone(), None
-            if target_layer == layer_k:
-                if hs.dim() == 3:
-                    hs[0, 0, :] = patch_v
-                else:
-                    hs[0, :] = patch_v
-            return (hs,) + rest if rest else hs
-        return hook
+    def hook(module, inp, output):
+        if isinstance(output, tuple):
+            hs, rest = output[0].clone(), output[1:]
+        else:
+            hs, rest = output.clone(), None
+        if hs.dim() == 3:
+            hs[0, 0, :] = patch_v
+        else:
+            hs[0, :] = patch_v
+        return (hs,) + rest if rest else hs
 
-    hooks = [
-        layer.register_forward_hook(make_hook(i))
-        for i, layer in enumerate(model.encoder.layer)
-    ]
+    target_module = (model.embeddings if layer_k == 0
+                     else model.encoder.layer[layer_k - 1])
+    h = target_module.register_forward_hook(hook)
     inp = tokenizer(smiles_tgt, return_tensors="pt",
                     truncation=True, max_length=128)
     inp = {k: v.to(device) for k, v in inp.items()}
     with torch.no_grad():
         out = model(**inp, output_hidden_states=True)
-    for h in hooks:
-        h.remove()
+    h.remove()
     emb = out.hidden_states[-1][0, 0, :].float().cpu().numpy()
     return float(head.predict(emb.reshape(1, -1))[0])
 

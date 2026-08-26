@@ -1,0 +1,1 @@
+Predictions from a chemistry language model shift by 1.69 logS on average when the same molecule is rewritten in another notation, affecting 88% of ESOL. Descriptor models are unaffected, locating the failure in string-based models.

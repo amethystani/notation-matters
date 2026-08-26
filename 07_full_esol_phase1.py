@@ -31,7 +31,7 @@ def classify(smiles: str) -> str:
     if re.search(r'[nNsS].*\d|\d.*[nNsS]', s):            return "heterocyclic"
     if re.search(r'[a-z]', s) and re.search(r'\d', s):    return "aromatic"
     if 'C(=O)O' in s or 'C(O)=O' in s or 'OC(=O)' in s: return "carboxylic/ester"
-    if re.search(r'[FClBrI]', s):                          return "halogenated"
+    if re.search(r'Cl|Br|F|I', s):                         return "halogenated"
     if re.search(r'(?<![a-z])O(?![a-z=\(])', s):          return "alcohol/phenol"
     if re.search(r'(?<![a-z])N(?![a-z=\(+])', s):         return "amine"
     return "aliphatic"

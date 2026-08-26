@@ -1,0 +1,933 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL /tmp/origtex/main.tex   Thu Aug 27 00:29:47 2026
+%DIF ADD main.tex                Thu Aug 27 00:29:21 2026
+%RSC LaTeX Article Template
+%Copyright The Royal Society of Chemistry 2016
+%Adapted for: "Notation Matters" — Digital Discovery Communication
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twoside,twocolumn,9pt]{article}
+\usepackage{extsizes}
+\usepackage[super,sort&compress,comma]{natbib}
+\usepackage[version=3]{mhchem}
+\usepackage[left=1.5cm, right=1.5cm, top=1.785cm, bottom=2.0cm]{geometry}
+\usepackage{balance}
+\usepackage{mathptmx}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage[format=plain,justification=justified,singlelinecheck=false,font={stretch=1.125,small,sf},labelfont=bf,labelsep=space]{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{fnpos}
+\usepackage[english]{babel}
+\addto{\captionsenglish}{%
+  \renewcommand{\refname}{Notes and references}
+}
+\usepackage{array}
+\usepackage{droidsans}
+\usepackage{charter}
+\usepackage[T1]{fontenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{setspace}
+\usepackage[compact]{titlesec}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes,positioning,fit,backgrounds}
+%%%Please don't disable any packages in the preamble, as this may cause the template to display incorrectly.%%%
+
+\usepackage{epstopdf}
+
+\definecolor{cream}{RGB}{222,217,201}
+\definecolor{rscblue}{RGB}{0,83,156}
+\definecolor{rscgold}{RGB}{200,155,0}
+\definecolor{ddgray}{RGB}{88,100,112}   % Digital Discovery header bar colour
+
+% Consistent logS typesetting
+\newcommand{\logS}{\ensuremath{\log S}}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}} %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\providecommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\providecommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\providecommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF AMSMATHULEM PREAMBLE %DIF PREAMBLE
+\makeatletter %DIF PREAMBLE
+\let\sout@orig\sout %DIF PREAMBLE
+\renewcommand{\sout}[1]{\ifmmode\text{\sout@orig{\ensuremath{#1}}}\else\sout@orig{#1}\fi} %DIF PREAMBLE
+\makeatother %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+\fancypagestyle{plain}{
+\renewcommand{\headrulewidth}{0pt}
+}
+
+%%%PAGE SETUP%%%
+\makeFNbottom
+\makeatletter
+\renewcommand\LARGE{\@setfontsize\LARGE{15pt}{17}}
+\renewcommand\Large{\@setfontsize\Large{12pt}{14}}
+\renewcommand\large{\@setfontsize\large{10pt}{12}}
+\renewcommand\footnotesize{\@setfontsize\footnotesize{7pt}{10}}
+\makeatother
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand\footnoterule{\vspace*{1pt}%
+\color{cream}\hrule width 3.5in height 0.4pt \color{black}\vspace*{5pt}}
+\setcounter{secnumdepth}{5}
+
+\makeatletter
+\renewcommand\@biblabel[1]{#1}
+\renewcommand\@makefntext[1]%
+{\noindent\makebox[0pt][r]{\@thefnmark\,}#1}
+\makeatother
+\renewcommand{\figurename}{\small{Fig.}~}
+\sectionfont{\sffamily\Large}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\bf}
+\setstretch{1.125}
+\setlength{\skip\footins}{0.8cm}
+\setlength{\footnotesep}{0.25cm}
+\setlength{\jot}{10pt}
+\titlespacing*{\section}{0pt}{4pt}{4pt}
+\titlespacing*{\subsection}{0pt}{15pt}{1pt}
+%%%END OF PAGE SETUP%%%
+
+%%%FOOTER%%%
+\fancyfoot{}
+\fancyfoot[LO,RE]{\footnotesize\sffamily\textit{Digital Discovery},~2025,~\textbf{X},~1--\pageref{LastPage}}
+\fancyfoot[RO]{\footnotesize\sffamily\textcopyright~2025~The~Royal~Society~of~Chemistry~\textbar\hspace{2pt}\thepage}
+\fancyfoot[LE]{\footnotesize\sffamily\thepage~\textbar\hspace{2pt}\textcopyright~2025~The~Royal~Society~of~Chemistry}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\arrayrulewidth}{1pt}
+\setlength{\columnsep}{6.5mm}
+\setlength\bibsep{1pt}
+%%%END OF FOOTER%%%
+
+%%%FIGURE SETUP%%%
+\makeatletter
+\newlength{\figrulesep}
+\setlength{\figrulesep}{0.5\textfloatsep}
+
+\newcommand{\topfigrule}{\vspace*{-1pt}%
+\noindent{\color{cream}\rule[-\figrulesep]{\columnwidth}{1.5pt}} }
+
+\newcommand{\botfigrule}{\vspace*{-2pt}%
+\noindent{\color{cream}\rule[\figrulesep]{\columnwidth}{1.5pt}} }
+
+\newcommand{\dblfigrule}{\vspace*{-1pt}%
+\noindent{\color{cream}\rule[-\figrulesep]{\textwidth}{1.5pt}} }
+\makeatother
+%%%END OF FIGURE SETUP%%%
+
+%%%TITLE, AUTHORS AND ABSTRACT%%%
+\DIFdelbegin %DIFDELCMD < \twocolumn[
+%DIFDELCMD <   \begin{@twocolumnfalse}
+%DIFDELCMD < %% Journal name + RSC logo row
+%DIFDELCMD < {\sffamily\fontsize{26}{30}\selectfont\textbf{\textit{Digital Discovery}}%
+%DIFDELCMD < \hfill\raisebox{-8pt}[0pt][0pt]{\includegraphics[height=55pt]{head_foot/RSC_LOGO_CMYK}}\\[0.8ex]%
+%DIFDELCMD < %% Article-type coloured bar (Digital Discovery steel-gray)
+%DIFDELCMD < \noindent\colorbox{ddgray}{\parbox[c][1.55em]{\dimexpr\linewidth-2\fboxsep\relax}{%
+%DIFDELCMD <   \hspace{8pt}\color{white}\sffamily\bfseries\small\MakeUppercase{Communication}}}}\par
+%DIFDELCMD < \vspace{1em}
+%DIFDELCMD < \sffamily
+%DIFDELCMD < \begin{tabular}{m{4.5cm} p{13.5cm} }
+%DIFDELCMD < 
+
+%DIFDELCMD < %% Cite-this / DOI column (replaces head_foot/DOI.pdf)
+%DIFDELCMD < \parbox{4.2cm}{\sffamily\scriptsize
+%DIFDELCMD <   Cite this: \textit{Digital Discovery},\\
+%DIFDELCMD <   2025, \textbf{X}, 1--6\\[3pt]
+%DIFDELCMD <   DOI: \textit{(assigned on acceptance)}} &
+%DIFDELCMD < \noindent\LARGE{\textbf{Notation matters: cross-representation inconsistency in chemistry language models and its mechanistic origins}} \\
+%DIFDELCMD < 
+
+%DIFDELCMD < \vspace{0.3cm} & \vspace{0.3cm} \\
+%DIFDELCMD < 
+
+%DIFDELCMD < & \noindent\large{Animesh Mishra$^{\ast}$\textit{$^{a}$}} \\
+%DIFDELCMD < 
+
+%DIFDELCMD < %% Received/Accepted dates column (replaces head_foot/dates.pdf)
+%DIFDELCMD < \parbox{4.2cm}{\sffamily\scriptsize
+%DIFDELCMD <   Received 10$^{\rm th}$ May 2025\\
+%DIFDELCMD <   Accepted \phantom{10}---\phantom{May 2025}\\[3pt]
+%DIFDELCMD <   DOI: \textit{(assigned on acceptance)}} &
+%DIFDELCMD < \noindent\normalsize{%
+%DIFDELCMD < Large language models (LLMs) are increasingly applied to molecular property prediction, but whether they encode notation-agnostic molecular representations or exploit surface-level string patterns remains untested. We present a dual-phase investigation: Qwen3.6 (35\,B-parameter mixture-of-experts) is queried across four notation systems (SMILES, IUPAC, InChI, SELFIES) for 1072 ESOL molecules; and representation-level hidden-state replacement localises notation divergence within ChemBERTa-2's encoder. Behaviourally, across 1072 ESOL molecules, 88.0\% exhibit cross-notation inconsistency (mean spread 1.69\,$\logS$; median 1.30\,$\logS$). SELFIES achieves the lowest sign-flip rate across all four notations (1.7\% \textit{vs.}\ 5.4\% for SMILES; Fisher exact: OR\,=\,3.34, $p\,=\,6.2\!\times\!10^{-6}$); InChI achieves the lowest MAE (0.887\,$\logS$), revealing that notation choice matters differently for catastrophic \textit{vs.}\ average prediction error. Carboxylic/ester compounds are the most inconsistent structural class (mean spread 2.15\,$\logS$; Kruskal--Wallis $p\,=\,1.5\!\times\!10^{-7}$). Mechanistically, representation-level hidden-state replacement on all 1051 valid augmented-SMILES pairs from ESOL shows that 76.6\% of pairs improve after optimal-layer replacement; no pair degrades (mean improvement 0.62\,$\logS$ [95\%~CI: 0.57,\,0.66]; Wilcoxon $p\,=\,1.06\!\times\!10^{-133}$). Notation divergence is distributed across lower-to-middle encoder layers (L0--L4). Inconsistency and inaccuracy remain orthogonal at this scale (Spearman $\rho\,=\,-0.059$; $p\,=\,0.055$; $n\,=\,1051$), confirming that notation is a hidden confound accuracy-focused benchmarks cannot detect.%
+%DIFDELCMD < } \\
+%DIFDELCMD < 
+
+%DIFDELCMD < \end{tabular}
+%DIFDELCMD < 
+
+%DIFDELCMD <  \end{@twocolumnfalse} \vspace{0.6cm}
+%DIFDELCMD < ]
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \twocolumn[
+  \begin{@twocolumnfalse}
+%% Journal name + RSC logo row
+{\sffamily\fontsize{26}{30}\selectfont\textbf{\textit{Digital Discovery}}%
+\hfill\raisebox{-8pt}[0pt][0pt]{\includegraphics[height=55pt]{head_foot/RSC_LOGO_CMYK}}\\[0.8ex]%
+%% Article-type coloured bar (Digital Discovery steel-gray)
+\noindent\colorbox{ddgray}{\parbox[c][1.55em]{\dimexpr\linewidth-2\fboxsep\relax}{%
+  \hspace{8pt}\color{white}\sffamily\bfseries\small\MakeUppercase{Communication}}}}\par
+\vspace{1em}
+\sffamily
+\begin{tabular}{m{4.5cm} p{13.5cm} }
+
+%% Cite-this / DOI column (replaces head_foot/DOI.pdf)
+\parbox{4.2cm}{\sffamily\scriptsize
+  Cite this: \textit{Digital Discovery},\\
+  2025, \textbf{X}, 1--6\\[3pt]
+  DOI: \textit{(assigned on acceptance)}} &
+\noindent\LARGE{\textbf{Notation matters: cross-representation inconsistency in chemistry language models and its mechanistic origins}} \\
+
+\vspace{0.3cm} & \vspace{0.3cm} \\
+
+& \noindent\large{Animesh Mishra$^{\ast}$\textit{$^{a}$}} \\
+
+%% Received/Accepted dates column (replaces head_foot/dates.pdf)
+\parbox{4.2cm}{\sffamily\scriptsize
+  Received 10$^{\rm th}$ May 2025\\
+  Accepted \phantom{10}---\phantom{May 2025}\\[3pt]
+  DOI: \textit{(assigned on acceptance)}} &
+\noindent\normalsize{%
+Large language models (LLMs) are increasingly applied to molecular property prediction, but whether they encode notation-agnostic molecular representations or exploit surface-level string patterns remains untested. I present a dual-phase investigation: Qwen3.6 (35\,B-parameter mixture-of-experts) is queried across four notation systems (SMILES, IUPAC, InChI, SELFIES) for 1072 ESOL molecules; and representation-level hidden-state replacement localises notation divergence within ChemBERTa-2's encoder. Behaviourally, across 1072 ESOL molecules, 88.0\% exhibit cross-notation inconsistency (mean spread 1.69\,$\logS$; median 1.30\,$\logS$). SELFIES achieves the lowest sign-flip rate across all four notations (1.7\% \textit{vs.}\ 5.4\% for SMILES; Fisher exact: OR\,=\,3.34, $p\,=\,6.2\!\times\!10^{-6}$); InChI achieves the lowest MAE (0.887\,$\logS$), revealing that notation choice matters differently for catastrophic \textit{vs.}\ average prediction error. Carboxylic/ester compounds are the most inconsistent structural class (mean spread 2.15\,$\logS$; Kruskal--Wallis $p\,=\,1.2\!\times\!10^{-7}$). Mechanistically, across all 1051 valid augmented-SMILES pairs from ESOL, CLS representations of chemically identical strings diverge monotonically with encoder depth (mean cosine similarity 0.987 at $L_1$ falling to 0.660 at the final layer), with divergence onset concentrated at $L_2$--$L_3$. This representational divergence predicts the behavioural gap (Spearman $\rho\,=\,-0.371$; $p\,=\,1.4\!\times\!10^{-35}$), with mean gap rising from 0.324\,$\logS$ in the most-similar quintile to 1.129\,$\logS$ in the least. Controlled hidden-state replacement shows that these representations retain molecule-specific information---substituting the true notation-partner's state is significantly better than an unrelated molecule's at every layer---yet does not close the prediction gap, indicating a failure to converge on a shared representation rather than a loss of molecular identity. Inconsistency and inaccuracy remain orthogonal at this scale (Spearman $\rho\,=\,-0.059$; $p\,=\,0.055$; $n\,=\,1051$), confirming that notation is a hidden confound accuracy-focused benchmarks cannot detect.%
+} \\
+
+\end{tabular}
+
+ \end{@twocolumnfalse} \vspace{0.6cm}
+]
+\DIFaddend %%%END OF TITLE, AUTHORS AND ABSTRACT%%%
+
+%%%FONT SETUP%%%
+\renewcommand*\rmdefault{bch}\normalfont\upshape
+\rmfamily
+\section*{}
+\vspace{-1cm}
+
+%%%FOOTNOTES%%%
+\footnotetext{\textit{$^{a}$~Department of Computer Science and Engineering, Shiv Nadar Institution of Eminence, NH-91, Tehsil Dadri, Gautam Buddha Nagar, Uttar Pradesh 201314, India. E-mail: am847@snu.edu.in. ORCID: 0009-0009-1770-6329.}}
+
+%%%END OF FOOTNOTES%%%
+
+%%%MAIN TEXT%%%
+
+%%% TABLE OF CONTENTS / GRAPHICAL ABSTRACT %%%
+\begin{figure*}[t]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \begin{tikzpicture}[font=\sffamily\small,
+%DIFDELCMD <   box/.style={draw=rscblue!70, rounded corners=3pt, fill=rscblue!8,
+%DIFDELCMD <               minimum width=1.6cm, minimum height=0.55cm, align=center,
+%DIFDELCMD <               inner sep=3pt},
+%DIFDELCMD <   arrow/.style={-{Stealth[length=4pt]}, thick, color=rscblue!80},
+%DIFDELCMD <   layerbox/.style={draw=rscgold!80, fill=rscgold!15, rounded corners=2pt,
+%DIFDELCMD <                    minimum width=0.55cm, minimum height=0.42cm, align=center,
+%DIFDELCMD <                    inner sep=2pt, font=\sffamily\scriptsize},
+%DIFDELCMD <   bestlayer/.style={draw=red!70, fill=red!15, rounded corners=2pt,
+%DIFDELCMD <                     minimum width=0.55cm, minimum height=0.42cm, align=center,
+%DIFDELCMD <                     inner sep=2pt, font=\sffamily\scriptsize\bfseries, line width=0.8pt}]
+%DIFDELCMD < 
+
+%DIFDELCMD < %% ---- LEFT PANEL: Phase 1 overview ----
+%DIFDELCMD < \node[font=\sffamily\bfseries\small, color=rscblue] at (0, 2.55) {Phase 1 — Behavioural (1072 molecules, 4 notations)};
+%DIFDELCMD < 
+
+%DIFDELCMD < % Notation boxes feeding into LLM
+%DIFDELCMD < \node[box] (smiles)  at (-3.5, 1.5) {SMILES};
+%DIFDELCMD < \node[box] (iupac)   at (-3.5, 0.75) {IUPAC};
+%DIFDELCMD < \node[box] (inchi)   at (-3.5, 0.0)  {InChI};
+%DIFDELCMD < \node[box,fill=green!10,draw=green!60!black] (selfies) at (-3.5,-0.75) {SELFIES};
+%DIFDELCMD < 
+
+%DIFDELCMD < % LLM box
+%DIFDELCMD < \node[draw=rscblue, fill=rscblue!20, rounded corners=4pt,
+%DIFDELCMD <       minimum width=1.8cm, minimum height=2.6cm, align=center,
+%DIFDELCMD <       font=\sffamily\scriptsize] (llm) at (-1.5, 0.375) {Qwen3.6\\35B MoE\\(temp$=0$)};
+%DIFDELCMD < 
+
+%DIFDELCMD < \draw[arrow] (smiles.east)  -- (llm.west|-smiles.east);
+%DIFDELCMD < \draw[arrow] (iupac.east)   -- (llm.west|-iupac.east);
+%DIFDELCMD < \draw[arrow] (inchi.east)   -- (llm.west|-inchi.east);
+%DIFDELCMD < \draw[arrow] (selfies.east) -- (llm.west|-selfies.east);
+%DIFDELCMD < 
+
+%DIFDELCMD < % Results: sign-flip bar chart (scale: 1% = 0.20 width)
+%DIFDELCMD < \node[font=\sffamily\scriptsize, align=center] at (0.5, 1.9) {Sign-flip rate};
+%DIFDELCMD < % bars
+%DIFDELCMD < \fill[rscblue!60]   (0.05,  1.4) rectangle (0.05+1.08, 1.65);  % SMILES 5.4%
+%DIFDELCMD < \fill[red!55]        (0.05,  0.9) rectangle (0.05+1.46, 1.15);  % IUPAC  7.3% (worst)
+%DIFDELCMD < \fill[rscblue!40]   (0.05,  0.4) rectangle (0.05+0.66, 0.65);  % InChI  3.3%
+%DIFDELCMD < \fill[green!50!black!60] (0.05, -0.1) rectangle (0.05+0.34, 0.15); % SELFIES 1.7%
+%DIFDELCMD < 
+
+%DIFDELCMD < % x-axis tick labels (0%, 5%, 10%)
+%DIFDELCMD < \node[font=\sffamily\tiny, anchor=north] at (0.05,       -0.15) {0\%};
+%DIFDELCMD < \node[font=\sffamily\tiny, anchor=north] at (0.05+1.00,  -0.15) {5\%};
+%DIFDELCMD < \node[font=\sffamily\tiny, anchor=north] at (0.05+2.00,  -0.15) {10\%};
+%DIFDELCMD < \draw[gray!50, line width=0.3pt] (0.05, -0.13) -- (0.05+2.00, -0.13);
+%DIFDELCMD < 
+
+%DIFDELCMD < % SMILES baseline dashed reference line at 5.4% (x = 0.05 + 1.08)
+%DIFDELCMD < \draw[dashed, orange!80!black, line width=0.7pt]
+%DIFDELCMD <   (0.05+1.08, -0.13) -- (0.05+1.08, 1.75);
+%DIFDELCMD < % no separate label needed: bar already reads "5.4% SMILES" and dashed line is self-evident
+%DIFDELCMD < 
+
+%DIFDELCMD < % bar labels
+%DIFDELCMD < \node[font=\sffamily\scriptsize, anchor=west] at (1.95, 1.525) {5.4\% {\scriptsize SMILES}};
+%DIFDELCMD < \node[font=\sffamily\scriptsize, color=red!70, anchor=west] at (1.95, 1.025) {7.3\% {\scriptsize IUPAC}};
+%DIFDELCMD < \node[font=\sffamily\scriptsize, anchor=west] at (1.95, 0.525) {3.3\% {\scriptsize InChI}};
+%DIFDELCMD < \node[font=\sffamily\scriptsize, color=green!40!black, anchor=west] at (1.95, 0.025) {1.7\% {\scriptsize SELFIES}};
+%DIFDELCMD < 
+
+%DIFDELCMD < \draw[arrow] (llm.east) -- (0.05, 0.375);   % reach bar-chart left edge
+%DIFDELCMD < 
+
+%DIFDELCMD < % 95% inconsistency callout
+%DIFDELCMD < \node[draw=red!60, fill=red!8, rounded corners=3pt, font=\sffamily\scriptsize,
+%DIFDELCMD <       align=center, inner sep=4pt] at (1.0,-1.15)
+%DIFDELCMD <       {\textbf{88\%} inconsistent\\avg.\ spread 1.69\,$\log S$};
+%DIFDELCMD < 
+
+%DIFDELCMD < %% ---- DIVIDER ----
+%DIFDELCMD < \draw[dashed, gray!50, line width=0.6pt] (3.55, -1.7) -- (3.55, 2.8);
+%DIFDELCMD < 
+
+%DIFDELCMD < %% ---- RIGHT PANEL: Phase 2 overview ----
+%DIFDELCMD < % Symmetric funnel layout: L5 drops into ridge.north, CLS rises into ridge.south.
+%DIFDELCMD < % Result box to the RIGHT of Ridge head → no path collision.
+%DIFDELCMD < \node[font=\sffamily\bfseries\small, color=rscblue] at (8.00, 2.55)
+%DIFDELCMD <   {Phase 2 — Mechanistic (1051 SMILES pairs)};
+%DIFDELCMD < \node[font=\sffamily\scriptsize, color=rscblue] at (7.85, 2.25)
+%DIFDELCMD <   {ChemBERTa-2 (6 layers)};
+%DIFDELCMD < 
+
+%DIFDELCMD < % ---- Top rail: SMILES_A → L0 → L2 → L4* → L5 ----
+%DIFDELCMD < \node[box, minimum width=1.3cm] (smiA) at (4.70, 1.75) {SMILES$_A$};
+%DIFDELCMD < \node[layerbox] (L0) at (5.90, 1.75) {$L_0$};
+%DIFDELCMD < \node[layerbox] (L2) at (6.70, 1.75) {$L_2$};
+%DIFDELCMD < \node[bestlayer] (L4) at (7.50, 1.75) {$L_4$\,\textbf{*}};
+%DIFDELCMD < \node[layerbox] (L5) at (8.30, 1.75) {$L_5$};
+%DIFDELCMD < 
+
+%DIFDELCMD < \draw[arrow] (smiA.east) -- (L0.west);
+%DIFDELCMD < \draw[arrow] (L0.east)   -- (L2.west);
+%DIFDELCMD < \draw[arrow] (L2.east)   -- (L4.west);
+%DIFDELCMD < \draw[arrow] (L4.east)   -- (L5.west);
+%DIFDELCMD < 
+
+%DIFDELCMD < % ---- Bottom rail: SMILES_B → CLS emb. ----
+%DIFDELCMD < \node[box, minimum width=1.3cm] (smiB) at (4.70, 0.30) {SMILES$_B$};
+%DIFDELCMD < \node[layerbox] (L6) at (6.70, 0.30) {CLS emb.};
+%DIFDELCMD < \draw[arrow] (smiB.east) -- (L6.west);
+%DIFDELCMD < 
+
+%DIFDELCMD < % ---- Ridge head: L5 enters from top, CLS enters from bottom (symmetric) ----
+%DIFDELCMD < \node[draw=gray!60, fill=gray!10, rounded corners=3pt,
+%DIFDELCMD <       minimum width=1.1cm, minimum height=0.5cm, align=center,
+%DIFDELCMD <       font=\sffamily\scriptsize] (ridge) at (9.00, 1.05) {Ridge\\head};
+%DIFDELCMD < 
+
+%DIFDELCMD < % L5  → ridge.north:  corner at (9.00, 1.75), then drop
+%DIFDELCMD < \draw[arrow] (L5.east) -| (ridge.north);
+%DIFDELCMD < % CLS → ridge.south:  corner at (9.00, 0.30), then rise  ← symmetric to L5
+%DIFDELCMD < \draw[arrow] (L6.east) -| (ridge.south);
+%DIFDELCMD < 
+
+%DIFDELCMD < % ---- Replacement annotation ----
+%DIFDELCMD < \draw[-{Stealth[length=4pt]}, red!70, thick, dashed]
+%DIFDELCMD <   (L4.south) -- (L4.south |- L6.east)
+%DIFDELCMD <   node[midway, left=4pt, anchor=east, font=\sffamily\scriptsize,
+%DIFDELCMD <        color=red!70, align=right] {modal $L_4$\\replace};
+%DIFDELCMD < 
+
+%DIFDELCMD < % ---- Result box: to the RIGHT of Ridge head (no downward-path conflict) ----
+%DIFDELCMD < \node[draw=green!60!black, fill=green!8, rounded corners=3pt,
+%DIFDELCMD <       font=\sffamily\scriptsize, align=center, inner sep=4pt,
+%DIFDELCMD <       text width=1.7cm] (result) at (11.00, 1.05)
+%DIFDELCMD <       {\textbf{76.6\%} improved ($n$\,=\,1051)\\$\Delta\!=\!0.62\,\log S$\\0/1051 degrade};
+%DIFDELCMD < \draw[arrow] (ridge.east) -- (result.west);
+%DIFDELCMD < 
+
+%DIFDELCMD < \end{tikzpicture}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[font=\sffamily\small,
+  box/.style={draw=rscblue!70, rounded corners=3pt, fill=rscblue!8,
+              minimum width=1.6cm, minimum height=0.55cm, align=center,
+              inner sep=3pt},
+  arrow/.style={-{Stealth[length=4pt]}, thick, color=rscblue!80},
+  layerbox/.style={draw=rscgold!80, fill=rscgold!15, rounded corners=2pt,
+                   minimum width=0.55cm, minimum height=0.42cm, align=center,
+                   inner sep=2pt, font=\sffamily\scriptsize},
+  bestlayer/.style={draw=red!70, fill=red!15, rounded corners=2pt,
+                    minimum width=0.55cm, minimum height=0.42cm, align=center,
+                    inner sep=2pt, font=\sffamily\scriptsize\bfseries, line width=0.8pt}]
+
+%% ---- LEFT PANEL: Phase 1 overview ----
+\node[font=\sffamily\bfseries\small, color=rscblue] at (0, 2.55) {Phase 1 — Behavioural (1072 molecules, 4 notations)};
+
+% Notation boxes feeding into LLM
+\node[box] (smiles)  at (-3.5, 1.5) {SMILES};
+\node[box] (iupac)   at (-3.5, 0.75) {IUPAC};
+\node[box] (inchi)   at (-3.5, 0.0)  {InChI};
+\node[box,fill=green!10,draw=green!60!black] (selfies) at (-3.5,-0.75) {SELFIES};
+
+% LLM box
+\node[draw=rscblue, fill=rscblue!20, rounded corners=4pt,
+      minimum width=1.8cm, minimum height=2.6cm, align=center,
+      font=\sffamily\scriptsize] (llm) at (-1.5, 0.375) {Qwen3.6\\35B MoE\\(temp$=0$)};
+
+\draw[arrow] (smiles.east)  -- (llm.west|-smiles.east);
+\draw[arrow] (iupac.east)   -- (llm.west|-iupac.east);
+\draw[arrow] (inchi.east)   -- (llm.west|-inchi.east);
+\draw[arrow] (selfies.east) -- (llm.west|-selfies.east);
+
+% Results: sign-flip bar chart (scale: 1% = 0.20 width)
+\node[font=\sffamily\scriptsize, align=center] at (0.5, 1.9) {Sign-flip rate};
+% bars
+\fill[rscblue!60]   (0.05,  1.4) rectangle (0.05+1.08, 1.65);  % SMILES 5.4%
+\fill[red!55]        (0.05,  0.9) rectangle (0.05+1.46, 1.15);  % IUPAC  7.3% (worst)
+\fill[rscblue!40]   (0.05,  0.4) rectangle (0.05+0.66, 0.65);  % InChI  3.3%
+\fill[green!50!black!60] (0.05, -0.1) rectangle (0.05+0.34, 0.15); % SELFIES 1.7%
+
+% x-axis tick labels (0%, 5%, 10%)
+\node[font=\sffamily\tiny, anchor=north] at (0.05,       -0.15) {0\%};
+\node[font=\sffamily\tiny, anchor=north] at (0.05+1.00,  -0.15) {5\%};
+\node[font=\sffamily\tiny, anchor=north] at (0.05+2.00,  -0.15) {10\%};
+\draw[gray!50, line width=0.3pt] (0.05, -0.13) -- (0.05+2.00, -0.13);
+
+% SMILES baseline dashed reference line at 5.4% (x = 0.05 + 1.08)
+\draw[dashed, orange!80!black, line width=0.7pt]
+  (0.05+1.08, -0.13) -- (0.05+1.08, 1.75);
+% no separate label needed: bar already reads "5.4% SMILES" and dashed line is self-evident
+
+% bar labels
+\node[font=\sffamily\scriptsize, anchor=west] at (1.95, 1.525) {5.4\% {\scriptsize SMILES}};
+\node[font=\sffamily\scriptsize, color=red!70, anchor=west] at (1.95, 1.025) {7.3\% {\scriptsize IUPAC}};
+\node[font=\sffamily\scriptsize, anchor=west] at (1.95, 0.525) {3.3\% {\scriptsize InChI}};
+\node[font=\sffamily\scriptsize, color=green!40!black, anchor=west] at (1.95, 0.025) {1.7\% {\scriptsize SELFIES}};
+
+\draw[arrow] (llm.east) -- (0.05, 0.375);   % reach bar-chart left edge
+
+% 95% inconsistency callout
+\node[draw=red!60, fill=red!8, rounded corners=3pt, font=\sffamily\scriptsize,
+      align=center, inner sep=4pt] at (1.0,-1.15)
+      {\textbf{88\%} inconsistent\\avg.\ spread 1.69\,$\log S$};
+
+%% ---- DIVIDER ----
+\draw[dashed, gray!50, line width=0.6pt] (3.55, -1.7) -- (3.55, 2.8);
+
+%% ---- RIGHT PANEL: Phase 2 overview ----
+% Symmetric funnel layout: L5 drops into ridge.north, CLS rises into ridge.south.
+% Result box to the RIGHT of Ridge head → no path collision.
+\node[font=\sffamily\bfseries\small, color=rscblue] at (8.00, 2.55)
+  {Phase 2 — Mechanistic (1051 SMILES pairs)};
+\node[font=\sffamily\scriptsize, color=rscblue] at (7.85, 2.25)
+  {ChemBERTa-2 (6 layers)};
+
+% ---- Top rail: SMILES_A → L0 → L2 → L4* → L5 ----
+\node[box, minimum width=1.3cm] (smiA) at (4.70, 1.75) {SMILES$_A$};
+\node[layerbox] (L0) at (5.90, 1.75) {$L_0$};
+\node[layerbox] (L2) at (6.70, 1.75) {$L_2$};
+\node[bestlayer] (L4) at (7.50, 1.75) {$L_4$\,\textbf{*}};
+\node[layerbox] (L5) at (8.30, 1.75) {$L_5$};
+
+\draw[arrow] (smiA.east) -- (L0.west);
+\draw[arrow] (L0.east)   -- (L2.west);
+\draw[arrow] (L2.east)   -- (L4.west);
+\draw[arrow] (L4.east)   -- (L5.west);
+
+% ---- Bottom rail: SMILES_B → CLS emb. ----
+\node[box, minimum width=1.3cm] (smiB) at (4.70, 0.30) {SMILES$_B$};
+\node[layerbox] (L6) at (6.70, 0.30) {CLS emb.};
+\draw[arrow] (smiB.east) -- (L6.west);
+
+% ---- Ridge head: L5 enters from top, CLS enters from bottom (symmetric) ----
+\node[draw=gray!60, fill=gray!10, rounded corners=3pt,
+      minimum width=1.1cm, minimum height=0.5cm, align=center,
+      font=\sffamily\scriptsize] (ridge) at (9.00, 1.05) {Ridge\\head};
+
+% L5  → ridge.north:  corner at (9.00, 1.75), then drop
+\draw[arrow] (L5.east) -| (ridge.north);
+% CLS → ridge.south:  corner at (9.00, 0.30), then rise  ← symmetric to L5
+\draw[arrow] (L6.east) -| (ridge.south);
+
+% ---- Replacement annotation ----
+\draw[-{Stealth[length=4pt]}, red!70, thick, dashed]
+  (L4.south) -- (L4.south |- L6.east)
+  node[midway, left=4pt, anchor=east, font=\sffamily\scriptsize,
+       color=red!70, align=right] {divergence\\onset $L_2$--$L_3$};
+
+% ---- Result box: to the RIGHT of Ridge head (no downward-path conflict) ----
+\node[draw=green!60!black, fill=green!8, rounded corners=3pt,
+      font=\sffamily\scriptsize, align=center, inner sep=4pt,
+      text width=1.7cm] (result) at (11.00, 1.05)
+      {cos $1.00\!\to\!0.66$\\($n$\,=\,1051)\\$\rho\!=\!-0.37$ vs.\ gap};
+\draw[arrow] (ridge.east) -- (result.west);
+
+\end{tikzpicture}%
+}
+\DIFaddendFL \caption{For Table of Contents Only}
+\label{fig:toc}
+\end{figure*}
+
+\section{Introduction}
+
+The deployment of large language models (LLMs) in computational chemistry has accelerated markedly, with general-purpose and domain-specific models now applied to molecular property prediction, reaction planning, and retrosynthesis.\cite{bran2024,white2023,jablonka2024,jablonka2024predictive} Understanding whether these general-purpose models encode genuine chemical knowledge---rather than surface-level string statistics---is a central question for the themed collection on ``General Purpose Models: LLMs and Beyond.'' A shared but rarely examined assumption across LLM chemistry applications is that models process the \textit{molecule} being described rather than the \textit{notation} used to describe it. Yet the same molecule admits multiple valid representations: SMILES\cite{weininger1988} encodes connectivity and stereochemistry as a linear character string; IUPAC names apply systematic nomenclature rules; InChI\cite{heller2015} provides a canonical layered identifier; and SELFIES\cite{krenn2020} guarantees syntactic validity by construction, eliminating chemically impossible strings. If a model truly internalises molecular concepts, its property predictions should be robust to this choice.
+
+Recent evidence challenges this assumption. Yan \textit{et al.}\cite{yan2025} demonstrated that state-of-the-art LLMs achieve $\leq1\%$ consistency across SMILES and IUPAC representations for water solubility prediction and---crucially---that consistency and accuracy are orthogonal: a more consistent model is not necessarily more accurate. Independently, Ganeeva \textit{et al.}\cite{ganeeva2025} showed that chemistry LMs remain non-robust to SMILES augmentations across regression and captioning tasks. These studies establish notation as a hidden confound that accuracy-focused training cannot resolve. Two critical gaps remain: (a) neither study includes SELFIES, a validity-guaranteed notation whose structural properties may confer robustness advantages; and (b) both are purely behavioural---no study has localised \textit{where in a chemistry encoder} notation-specific information is encoded, which is essential for designing notation-robust architectures.
+
+The second gap is addressable through mechanistic interpretability, a paradigm developed primarily for natural language tasks. Causal tracing has localised factual knowledge in GPT-family models\cite{meng2022} and information-flow analyses have revealed how in-context learning is mediated by attention patterns,\cite{wang2023} yet to \DIFdelbegin \DIFdel{our }\DIFdelend \DIFaddbegin \DIFadd{my }\DIFaddend knowledge no analogous mechanistic study exists for chemistry language models. This paper fills both gaps.
+
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend present three contributions. (1) A four-notation behavioural study (SMILES, IUPAC, InChI, SELFIES) of 1072 ESOL molecules across four structural classes, extending the scope and sample size of prior work.\cite{yan2025,ganeeva2025} (2) The identification that SELFIES achieves the lowest sign-flip rate across all four notations (rate 3.2$\times$ lower than SMILES; Fisher exact: OR\,=\,3.34 for SMILES relative to SELFIES, $p\,=\,6.2\!\times\!10^{-6}$), while InChI achieves the lowest MAE, revealing a previously unreported split between catastrophic and average prediction error. (3) To \DIFdelbegin \DIFdel{our }\DIFdelend \DIFaddbegin \DIFadd{my }\DIFaddend knowledge, the first mechanistic investigation of cross-notation representation divergence in a chemistry encoder---going beyond purely behavioural characterisation: \DIFdelbegin \DIFdel{using representation-level }\DIFdelend \DIFaddbegin \DIFadd{I show that CLS representations of chemically identical SMILES diverge monotonically with encoder depth, that divergence onset concentrates at $L_2$--$L_3$, and that the magnitude of representational divergence predicts the magnitude of prediction disagreement. Controlled }\DIFaddend hidden-state \DIFdelbegin \DIFdel{replacement with a trained property-prediction head, we show that notation divergence is encoded diffusely across lower-to-middle transformer layers (L0--L4), providing an architectural target for future mitigation. }\DIFdelend \DIFaddbegin \DIFadd{replacement further shows that diverged representations retain molecule-specific information without converging on a shared encoding, locating the phenomenon as a failure of convergence rather than a loss of chemical identity. }\DIFaddend A schematic overview of both study phases is provided in Fig.~\ref{fig:toc}.
+
+\section{Methods}
+
+\subsection{Behavioural inconsistency study}
+
+\subsubsection{Dataset and notation generation.~~} \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend applied the behavioural benchmark to all 1128 molecules in the ESOL water solubility dataset.\cite{delaney2004} IUPAC names and InChI identifiers were retrieved via the PubChem REST API compound-name lookup endpoint;\cite{kim2021} 56 lookups failed, leaving 1072 molecules with complete notation sets. SMILES strings were taken directly from ESOL; ground-truth $\logS$ values span $-11.60$ to $+1.58$\,log$_{10}$(mol\,L$^{-1}$). SELFIES were generated using the \texttt{selfies} library (v2.1.1)\cite{krenn2020} by direct SMILES conversion; 958 of 1072 (89.4\%) molecules yielded valid SELFIES representations with successful LLM responses. Molecules were assigned to structural classes by priority-ordered SMILES pattern matching\DIFaddbegin \DIFadd{, in the order}\DIFaddend : heterocyclic ($n=427$; heteroaromatic N or S in ring), aromatic ($n=267$; aromatic ring atoms), carboxylic/ester ($n=51$; C(=O)O sub-structure), \DIFdelbegin \DIFdel{and halogenated ($n=327$}\DIFdelend \DIFaddbegin \DIFadd{halogenated ($n=63$}\DIFaddend ; F, Cl, Br, or I\DIFdelbegin \DIFdel{; no aromatic ring).
+}\DIFdelend \DIFaddbegin \DIFadd{), alcohol/phenol ($n=177$), amine ($n=7$), and aliphatic ($n=80$) as the terminal case. Because assignment is priority-ordered and returns a single label, molecules bearing several functional groups are assigned to whichever rule matches first. This is a property of the labelling scheme rather than a chemical claim, and it applies to most of the dataset: 690 of 1072 molecules (64.4\%) match more than one rule, the commonest co-occurrences being aromatic with halogenated (101 molecules), heterocyclic with aromatic and alcohol/phenol (73), and carboxylic/ester with alcohol/phenol (45). Section~3.3 reports a subgroup analysis testing whether my class-level conclusions depend on this ordering. ESOL records each molecule in a single neutral form, and no tautomer enumeration or protonation-state assignment was performed, so the classification is insensitive to ionisation state by construction.
+}\DIFaddend 
+
+\subsubsection{LLM querying protocol.~~} \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend used Qwen3.6:35b-a3b,\cite{qwen2025} a 35\,B-total / 3\,B-active-parameter mixture-of-experts model, run locally via Ollama at temperature\,=\,0 (fully deterministic). Qwen3-series models route chain-of-thought tokens through a dedicated \texttt{think} field in the Ollama API; setting \texttt{think=False} suppresses this extended reasoning output and ensures all returned tokens constitute the final numerical answer. Each molecule was queried independently for each notation with the prompt:
+
+\begin{quote}\small
+\textit{``You are a chemistry expert. Predict the water solubility of the molecule below as $\log S$ ($\log_{10}$ molar solubility). Molecule (NOTATION): IDENTIFIER. Reply with ONLY one decimal number between $-10.0$ and $2.0$. No text, no units.''}
+\end{quote}
+
+\noindent where NOTATION was replaced by the notation system label (e.g., ``SMILES'', ``IUPAC'', ``InChI'', ``SELFIES'') and IDENTIFIER by the molecule's representation under that system. The notation label was therefore explicit in each query; the observed inconsistency across notations thus reflects the model's differential processing of identical molecules \textit{despite} being informed of the representation type.
+
+\DIFaddbegin \textbf{\DIFadd{Decoding and parsing.}} \DIFadd{Generation used }\texttt{\DIFadd{temperature}}\DIFadd{\,=\,0, }\texttt{\DIFadd{num\_predict}}\DIFadd{\,=\,12 and }\texttt{\DIFadd{think}}\DIFadd{\,=\,}\texttt{\DIFadd{False}}\DIFadd{; no other sampling parameters were modified from Ollama defaults, and no system prompt was used. Responses were parsed by extracting the first numeric token matching }\texttt{\DIFadd{-?\textbackslash d+\textbackslash.?\textbackslash d*}} \DIFadd{and accepting it only if it fell within $[-10.0, 2.0]$; a response was retried once and otherwise recorded as a parse failure. Attrition is reported separately for the two distinct causes---molecules for which a notation could not be generated or retrieved, and molecules for which no valid numeric response was obtained---in Table~\ref{tbl:notation} and Section~3.1.
+}
+
+\textbf{\DIFadd{Validation that the model performs the task.}} \DIFadd{A model that emits a near-constant value irrespective of input would exhibit a sign-flip rate determined by the sign of that constant rather than by any property of the notation, and would appear spuriously notation-robust. I therefore verify, per notation, the modal fraction (the share of predictions taking the single most frequent value) and the correlation between predictions and measured $\logS$. For Qwen3.6:35b-a3b the modal fractions are 19.9\% (SMILES), 13.0\% (IUPAC), 20.1\% (InChI) and 23.7\% (SELFIES), with Pearson $r=0.726$, $0.774$, $0.753$ and $0.617$ and Spearman $\rho=0.776$, $0.831$, $0.829$ and $0.662$ respectively (all $p<10^{-100}$). The model is therefore genuinely predicting solubility under every notation, and the cross-notation differences I report reflect notation rather than degenerate output. I note that a low count of }\textit{\DIFadd{distinct}} \DIFadd{values is not evidence of degeneracy: the model answers on a coarse one-decimal grid and yields only 2.4--7.1\% unique values across $\sim$1000 molecules while retaining strong rank correlation with ground truth.
+}
+
+\textbf{\DIFadd{Screening of additional models.}} \DIFadd{I screened four further open models under identical prompt and decoding settings, applying the validity criteria above: nous-hermes2:34b (Llama family, 34\,B), qwen2.5:7b, and 4-bit and 2-bit post-training quantisations of the Qwen3.6 architecture. All four failed. nous-hermes2:34b returned a single identical value for all 181 SELFIES prompts and the same value for 88.8\% of SMILES prompts ($r=0.20$); qwen2.5:7b gave $r=0.055$ on SMILES; the 2-bit quantisation gave $r=-0.177$ (Spearman $\rho=0.014$), and the 4-bit variant produced parseable answers for only 4 of 40 molecules. I report these outcomes because they bear directly on reproducibility: aggressive quantisation of this architecture removes the chemical capability required to study notation robustness at all, and a model that emits a different constant per notation will appear notation-sensitive for reasons unrelated to notation. Studying this phenomenon requires a model that demonstrably performs the underlying task, and among the open models available to me only the one reported here did.
+}
+
+\DIFaddend \textbf{Model selection rationale.} Qwen3.6:35b-a3b was selected for three reasons. First, its mixture-of-experts architecture activates only $\sim$3\,B of 35\,B parameters per token, enabling full local deployment on a single workstation without quantisation artefacts that could introduce additional notation-dependent noise. Second, it represents the Pareto frontier of open-weight models available at the time of the study: the 35B parameter scale places it in the same tier as GPT-3.5-class models evaluated in prior notation studies,\cite{yan2025} ensuring comparability. Third, its chain-of-thought reasoning can be deterministically disabled (\texttt{think=False}), eliminating stochastic intermediate tokens that would confound the temperature\,=\,0 reproducibility guarantee. A general-purpose rather than chemistry-fine-tuned model was chosen deliberately: \DIFdelbegin \DIFdel{our }\DIFdelend \DIFaddbegin \DIFadd{my }\DIFaddend goal is to probe whether general chemical knowledge in large LLMs is notation-invariant, not to benchmark the best achievable accuracy. Chemistry-specific fine-tuning on SMILES could mask notation sensitivity by biasing predictions toward one notation's statistical patterns.
+
+\subsubsection{Metrics.~~} The \textit{spread} for each molecule is defined as $\max(\text{predictions}) - \min(\text{predictions})$ across all notations with valid numerical responses. A molecule is \textit{inconsistent} if spread\,$>0.5$\,$\logS$. A \textit{sign flip} occurs when a molecule with true $\logS < -1$ (insoluble) receives a predicted $\logS > 0$ (highly soluble) under a given notation. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend computed 95\% bootstrap confidence intervals ($n_\text{boot}=2000$, reported to 2 decimal places) for all aggregate statistics.
+
+\subsection{Statistical testing}
+
+Differences in four-notation spread across structural classes were assessed with the Kruskal--Wallis $H$-test. Pairwise comparisons used one-tailed Mann--Whitney $U$-tests. The sign-flip advantage of SELFIES over SMILES was tested by a two-sample Fisher exact test ($H_0$: SELFIES sign-flip rate $\geq$ SMILES sign-flip rate). All tests were computed using \texttt{scipy.stats} (v1.16.2).
+
+\subsection{Mechanistic analysis}
+
+\subsubsection{Model and prediction head.~~} \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend used ChemBERTa-2 (seyonec/ChemBERTa-zinc-base-v1),\cite{ahmad2022} a 6-layer RoBERTa-based SMILES encoder (86\,M parameters, 768-dimensional hidden states) pre-trained on 77\,M ZINC SMILES\cite{irwin2012} via masked language modelling. Although SMILES-only during training, it provides a controlled probe for notation-specific encoding: any representational dependence on notation surface features is attributable to the training distribution.
+
+To make mechanistic interventions causally interpretable---converting hidden-state changes into observable output \DIFdelbegin \DIFdel{changes---we }\DIFdelend \DIFaddbegin \DIFadd{changes---I }\DIFaddend attached a linear ridge regression head ($\alpha=1.0$) trained on CLS token embeddings from ChemBERTa-2's final layer for all 1128 ESOL molecules. Five-fold cross-validation yielded MAE\,=\,0.783\,$\logS$, confirming a meaningful prediction signal.
+
+\subsubsection{SMILES augmentation pairs.~~} For all 1128 ESOL molecules, \DIFdelbegin \DIFdel{we }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend generated an augmented SMILES \textit{via} SELFIES-based augmentation: SMILES\,$\to$\,SELFIES encoding\,$\to$\,one-position token rotation\,$\to$\,SELFIES decoding\,$\to$\,augmented SMILES. Since SELFIES tokens correspond to atomic sub-structures rather than arbitrary characters, a one-position rotation is guaranteed by the SELFIES grammar to produce a valid, chemically meaningful string. Chemical equivalence of all retained pairs was confirmed by comparing canonical forms obtained \textit{via} SELFIES round-trip; all pairs encoded the same molecular graph. 1051 of 1128 augmentations (93.2\%) yielded valid, distinct SMILES pairs, with 77 augmentation failures excluded.
+
+\subsubsection{Representation-level hidden-state replacement.~~} For each pair (SMILES$_A$, SMILES$_B$), \DIFdelbegin \DIFdel{we }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend extract CLS hidden states at all seven positions (embedding layer\,$+$\,six transformer layers). \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend then replace the CLS hidden state of the SMILES$_B$ forward pass at layer $k$ with the corresponding state from SMILES$_A$ using a registered PyTorch \texttt{forward\_hook}, and measure the resulting $\logS$ prediction from the Ridge head. The improvement at layer $k$ is:
+
+\begin{equation}
+  \Delta(k) = \bigl|\hat{y}_A - \hat{y}_B\bigr| - \bigl|\hat{y}_A - \hat{y}_{B}^{(k)}\bigr|
+  \label{eq:improvement}
+\end{equation}
+
+A positive $\Delta(k)$ indicates that substituting the layer-$k$ CLS state narrows the prediction gap (notation divergence decreases); $\Delta(k)=0$ indicates no effect. Here $\hat{y}_A$ and $\hat{y}_B$ are the unmodified predictions for SMILES$_A$ and SMILES$_B$, and $\hat{y}_{B}^{(k)}$ is the prediction after replacing the layer-$k$ CLS state of SMILES$_B$ with that of SMILES$_A$. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend report the layer with maximum $\Delta(k)$ as the most effective intervention layer. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend use the conservative term \textit{representation-level hidden-state replacement} throughout, as \DIFdelbegin \DIFdel{we }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend do not perform formal causal mediation analysis. 95\% bootstrap CIs ($n_\text{boot}=2000$) are reported for all aggregate metrics.
+
+\subsubsection{Consistency--accuracy orthogonality.~~} \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend computed Spearman's $\rho$ between the per-pair prediction gap $|\hat{y}_A - \hat{y}_B|$ (inconsistency proxy) and the absolute prediction error $|\hat{y}_A - y^\ast|$ (inaccuracy proxy, where $y^\ast$ is the true $\logS$), testing whether they are statistically independent.
+
+\section{Results and discussion}
+
+\subsection{Four-notation behavioural inconsistency}
+
+Table~\ref{tbl:notation} summarises per-notation prediction accuracy and sign-flip rates for Qwen3.6 queried on 1072 ESOL molecules. A key finding is that the two quality dimensions---average accuracy and catastrophic-error avoidance---are optimised by \textit{different} notations: InChI yields the lowest MAE (0.887\,$\logS$) while SELFIES achieves the lowest sign-flip rate (1.7\%; 16/958). Notably, IUPAC exhibits the highest sign-flip rate (7.3\%; 73/1000) despite its intermediate MAE (1.038\,$\logS$). The SELFIES advantage over SMILES for sign-flip avoidance is strongly significant (Fisher exact: OR\,=\,3.34 for SMILES relative to SELFIES, $p\,=\,6.2\!\times\!10^{-6}$). SMILES and SELFIES have comparable MAE (1.127 vs.\ 1.136\,$\logS$).
+
+\begin{table}[h]
+\small
+\caption{\ Per-notation prediction performance of Qwen3.6 on 1072 ESOL molecules. Sign flip: molecule has true $\logS < -1$ (insoluble) but is predicted $\logS > 0$ (highly soluble). Bold indicates best value per column.}
+\label{tbl:notation}
+\begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}lccc}
+\hline
+Notation & $n$ & MAE ($\logS$) & Sign-flip rate \\
+\hline
+SMILES  & 969  & 1.127 & 5.4\% (52/969) \\
+IUPAC   & 1000 & 1.038 & 7.3\% (73/1000) \\
+InChI   & 993  & \textbf{0.887} & 3.3\% (33/993) \\
+SELFIES & 958  & 1.136 & \textbf{1.7\% (16/958)} \\
+\hline
+\end{tabular*}
+\end{table}
+
+Extending the analysis to the four-notation spread: 88.0\% (943/1072) of molecules exhibit spread\,$>0.5$\,$\logS$, with a mean spread of 1.686\,$\logS$ [95\% CI: 1.618,\,1.757; median 1.30\,$\logS$]. The three-notation spread (SMILES, IUPAC, InChI only) yields 74.9\% inconsistency and mean spread 1.244\,$\logS$ [1.180,\,1.305]; the addition of SELFIES increases both the inconsistency rate and the mean spread. Importantly, this inconsistency occurs despite the model being explicitly informed of the notation type in each query, demonstrating that notation-surface features---not notation ambiguity---drive the divergence.
+
+\DIFaddbegin \subsubsection{\DIFadd{Complete-case analysis.~~}} \DIFadd{The per-notation sample sizes in Table~\ref{tbl:notation} differ because a molecule may lack a valid representation in a given notation, or may return a response that cannot be parsed as a number in range. To confirm that the comparison is not driven by differential attrition, I repeated the analysis on the 790 molecules (73.7\% of 1072) returning a valid prediction in }\textit{\DIFadd{all four}} \DIFadd{notations. Both orderings are preserved: InChI retains the lowest MAE (0.895\,$\logS$, }\textit{\DIFadd{vs.}}\DIFadd{\ 0.887 unmatched) and SELFIES the lowest sign-flip rate (1.6\%, }\textit{\DIFadd{vs.}}\DIFadd{\ 1.7\%), and the SELFIES advantage over SMILES remains significant (Fisher exact OR\,=\,3.02, $p=2.5\!\times\!10^{-4}$). The inconsistency finding is stronger under matching, not weaker: 92.5\% of matched molecules exceed 0.5\,$\logS$ spread with a mean of 1.788\,$\logS$, against 88.0\% and 1.686\,$\logS$ unmatched. Restricting to molecules the model handles in every notation therefore does not attenuate the effect. I report notation-specific results in Table~\ref{tbl:notation} and note where a claim rests on the matched analysis instead.
+}
+
+\DIFaddend \subsection{\DIFaddbegin \DIFadd{The }\DIFaddend SELFIES sign-flip advantage is \DIFdelbegin \DIFdel{consistent }\DIFdelend \DIFaddbegin \DIFadd{broad but not universal }\DIFaddend across \DIFdelbegin \DIFdel{all }\DIFdelend structural classes}
+\label{sec:selfies}
+
+SELFIES achieves the lowest \DIFaddbegin \DIFadd{overall }\DIFaddend sign-flip rate \DIFdelbegin \DIFdel{not only overall but within every structural class examined }\DIFdelend \DIFaddbegin \DIFadd{(Table~\ref{tbl:notation}), and this advantage holds within most---but, importantly, not all---structural classes }\DIFaddend (Table~\ref{tbl:class}). For aromatic compounds \DIFdelbegin \DIFdel{, }\DIFdelend SELFIES produces just 1 sign-flip error in 267 valid predictions (0.4\%) compared with 12/223 for SMILES (5.4\%)\DIFdelbegin \DIFdel{. Heterocyclic }\DIFdelend \DIFaddbegin \DIFadd{; heterocyclic }\DIFaddend compounds show zero SELFIES sign-flip errors (0/378) versus 15/388 for SMILES (3.9\%)\DIFdelbegin \DIFdel{. Even for halogenated compounds---which might be expected to challenge SELFIES token encoding---SELFIES produces 15 sign-flip errors in 262 }\DIFdelend \DIFaddbegin \DIFadd{; and carboxylic/ester compounds likewise show none (0/51) against 4/50 for SMILES (8.0\%).
+}
+
+\DIFadd{Two classes run counter to this pattern. For alcohol/phenol compounds InChI is the safest notation (0/166; 0.0\%) while SELFIES incurs 7 sign-flips in 153 }\DIFaddend valid predictions (\DIFdelbegin \DIFdel{5.7\%)compared with }\DIFdelend \DIFaddbegin \DIFadd{4.6\%). More strikingly, for genuinely halogenated compounds SMILES is the safest notation (6/56; 10.7\%) and SELFIES is worse (8/51; 15.7\%). I note that this reverses the conclusion reported in an earlier version of this work, in which a defect in my structural-class assignment---identified in review and described in Section~2.1.1---placed 264 non-halogenated molecules in the halogenated class and thereby masked the effect.
+}
+
+\DIFadd{The corrected classification also reveals that halogenated compounds are markedly the most sign-flip-prone class overall, at every notation, and that IUPAC is catastrophically unreliable for them (}\DIFaddend 21/\DIFdelbegin \DIFdel{308 for SMILES (6.8\%) , a marginal but consistent advantage.
+IUPAC, not SELFIES, is the notation most prone to sign-flip errors in every class.
+We }\DIFdelend \DIFaddbegin \DIFadd{58; 36.2\%, against an overall IUPAC rate of 7.3\%). Halogen atoms are represented compactly and unambiguously in SMILES but require substituent prefixes and locants in systematic nomenclature, and I hypothesise that this is where the model's grasp of halogen identity is weakest; the hypothesis remains to be tested directly. IUPAC is the most sign-flip-prone notation in the three largest classes (heterocyclic, aromatic, halogenated) but not universally so: SMILES is worst for carboxylic/ester and alcohol/phenol compounds, and InChI for aliphatics.
+}
+
+\DIFadd{I continue to }\DIFaddend hypothesise that SELFIES' validity-by-construction property prevents the \DIFdelbegin \DIFdel{LLM }\DIFdelend \DIFaddbegin \DIFadd{model }\DIFaddend from processing syntactically impossible token sequences, reducing catastrophic \DIFdelbegin \DIFdel{prediction failures across all chemical classes; this mechanistic hypothesis remains to be tested directly. These class-level results also underscore the importance of scale: a preliminary analysis of 84 stratified molecules suggested SELFIES might produce more halogenated sign-flips than SMILES (3\,}\textit{\DIFdel{vs.}}%DIFAUXCMD
+\DIFdel{\ 1 in $n=15$), but this was a small-sample artefact that does not survive at scale}\DIFdelend \DIFaddbegin \DIFadd{failures in aggregate; the two exceptions above indicate that this protection is not uniform across chemistry, and that notation choice is best made with the relevant structural class in mind}\DIFaddend .
+
+\subsection{Structural class moderates inconsistency}
+
+The four-notation spread distributions differ highly significantly across structural classes (Kruskal--Wallis \DIFdelbegin \DIFdel{$H=34.55$, $p=1.5\!\times\!10^{-7}$}\DIFdelend \DIFaddbegin \DIFadd{$H=42.85$, $p=1.2\!\times\!10^{-7}$, across seven corrected classes}\DIFaddend ). Table~\ref{tbl:class} shows the class breakdown.
+
+\DIFdelbegin %DIFDELCMD < \begin{table}[h]
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{table*}[t]
+\DIFaddendFL \small
+\caption{\ Notation inconsistency by structural class ($n=1072$)\DIFaddbeginFL \DIFaddFL{, using the corrected classification}\DIFaddendFL . Spread: mean four-notation $\logS$ spread (bold = highest). \DIFdelbeginFL \DIFdelFL{Sign-flip rates}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{SF}\DIFaddendFL : \DIFaddbeginFL \DIFaddFL{sign-flip rate, }\DIFaddendFL molecules with true $\logS<-1$ predicted as $>0$\DIFaddbeginFL \DIFaddFL{; bold marks the safest notation in each row}\DIFaddendFL .}
+\label{tbl:class}
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}lcccc}
+%DIFDELCMD < \hline
+%DIFDELCMD < Class & $n$ & Spread$^a$ & SF (SMILES) & SF (SELFIES) \\
+%DIFDELCMD < \hline
+%DIFDELCMD < Carboxylic/ester & 51  & \textbf{2.15} & 8.0\% & 0.0\% \\
+%DIFDELCMD < Halogenated      & 327 & 1.83 & 6.8\% & 5.7\% \\
+%DIFDELCMD < Aromatic         & 267 & 1.82 & 5.4\% & 0.4\% \\
+%DIFDELCMD < Heterocyclic     & 427 & 1.44 & 3.9\% & 0.0\% \\
+%DIFDELCMD < \hline
+%DIFDELCMD < \end{tabular*}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc}
+\hline
+Class & $n$ & Spread$^a$ & SMILES & IUPAC & InChI & SELFIES \\
+\hline
+Carboxylic/ester & 51  & \textbf{2.15} & 8.0\% & 2.0\% & \textbf{0.0\%} & \textbf{0.0\%} \\
+Alcohol/phenol   & 177 & 1.93 & 8.7\% & 5.9\% & \textbf{0.0\%} & 4.6\% \\
+Halogenated      & 63  & 1.88 & \textbf{10.7\%} & 36.2\% & 26.7\% & 15.7\% \\
+Aromatic         & 267 & 1.82 & 5.4\% & 6.0\% & 4.4\% & \textbf{0.4\%} \\
+Aliphatic        & 80  & 1.62 & \textbf{0.0\%} & \textbf{0.0\%} & 7.5\% & \textbf{0.0\%} \\
+Heterocyclic     & 427 & 1.44 & 3.9\% & 6.6\% & 0.5\% & \textbf{0.0\%} \\
+Amine            & 7   & 1.10 & \textbf{0.0\%} & \textbf{0.0\%} & \textbf{0.0\%} & \textbf{0.0\%} \\
+\hline
+\end{tabular*}
+\DIFaddendFL $^a$ Mean four-notation spread in $\logS$ units.
+\DIFdelbeginFL %DIFDELCMD < \end{table}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \end{table*}
+\DIFaddend 
+
+Carboxylic/ester compounds exhibit the highest mean spread \DIFaddbegin \DIFadd{of any class }\DIFaddend (2.15\,$\logS$; 47/51 inconsistent)\DIFdelbegin \DIFdel{, significantly higher than halogenated (}\DIFdelend \DIFaddbegin \DIFadd{. One-tailed }\DIFaddend Mann--Whitney \DIFdelbegin \DIFdel{$p=0.025$), aromatic ($p=0.041$), and heterocyclic ($p<0.0001$) compounds. Halogenated and aromatic compounds have nearly identical mean spreads (1.83 vs.\ 1.82\,$\logS$; $p=0.408$ ns) and are both significantly more inconsistent than heterocyclics ($p=0.002$ }\DIFdelend \DIFaddbegin \DIFadd{tests find them significantly more inconsistent than heterocyclic ($p<0.0001$), aliphatic ($p=0.001$), amine ($p=0.008$) }\DIFaddend and \DIFdelbegin \DIFdel{$p<0.0001$ respectively) }\DIFdelend \DIFaddbegin \DIFadd{aromatic ($p=0.020$) compounds; the differences from alcohol/phenol ($p=0.057$) and halogenated ($p=0.097$) compounds are not significant, the latter reflecting the small size of the corrected halogenated class ($n=63$) together with its own comparatively high mean spread (1.88\,$\logS$)}\DIFaddend . For carboxylic/ester compounds, 47/51 (92\%) show inconsistency yet the SMILES sign-flip rate is only 8.0\% (4/50), revealing a distinct failure mode: the model consistently disagrees on \textit{magnitude} without reversing the solubility sign. \DIFdelbegin \DIFdel{We hypothesise that the high spread in carboxylic/ester compounds reflects }\DIFdelend \DIFaddbegin \DIFadd{Several explanations are consistent with this observation and my data cannot separate them: }\DIFaddend ambiguity in carbonyl-group context across notations\DIFdelbegin \DIFdel{: }\DIFdelend \DIFaddbegin \DIFadd{, given that }\DIFaddend IUPAC uses substituent-based nomenclature \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{while }\DIFaddend SMILES uses explicit graph notation \DIFdelbegin \DIFdel{, }\DIFdelend and InChI encodes \DIFdelbegin \DIFdel{the protonation state implicitly---differences that may produce systematically different numerical predictions despite referring to the same functional group (direct causal attribution }\DIFdelend \DIFaddbegin \DIFadd{protonation state implicitly; differences in ionisation behaviour, which my neutral-form representation cannot capture; and hydrogen-bonding effects on solubility that the notations describe with differing explicitness. Distinguishing these }\DIFaddend would require controlled ablations beyond the scope of this study\DIFaddbegin \DIFadd{, and I therefore report the association without attributing it to notation surface features alone.
+}
+
+\DIFadd{Because the priority-ordered assignment labels only a subset of carbonyl-bearing molecules as carboxylic/ester, I tested directly whether this finding is an artefact of the ordering. Of the 123 molecules containing a C(=O)O substructure anywhere, 51 are assigned to carboxylic/ester and the remainder match a higher-priority ring rule. Comparing all 123 against the 949 molecules with no such substructure, the effect persists (mean spread 1.833 }\textit{\DIFadd{vs.}}\DIFadd{\ 1.668\,$\logS$; one-tailed Mann--Whitney $p=0.016$), so it does not depend on which subset receives the label. The subgroup breakdown is itself informative: carboxylic compounds with no ring system show a mean spread of 2.153\,$\logS$ ($n=51$) and those bearing an aromatic ring 2.015\,$\logS$ ($n=20$), whereas those bearing a heterocycle show 1.448\,$\logS$ ($n=52$}\DIFaddend )\DIFaddbegin \DIFadd{---essentially the heterocyclic class average of 1.437\,$\logS$}\DIFaddend . \DIFaddbegin \DIFadd{Ring-free carboxylic compounds are significantly more inconsistent than ring-bearing ones ($p=0.002$). The ring system therefore dominates the carbonyl group in determining cross-notation behaviour, and the carboxylic/ester result is most precisely stated as a property of ring-free carbonyl compounds. }\DIFaddend Notably, SELFIES achieves zero sign-flip errors for both carboxylic/ester (0/51) and heterocyclic (0/378) compounds (Table~\ref{tbl:class}).
+
+Table~\ref{tbl:top10} shows the ten most extreme single-molecule inconsistencies at full scale, spanning up to 6.00\,$\logS$ units.
+
+\begin{table*}
+\small
+\caption{\ Top-10 worst per-molecule inconsistencies across four notations (full 1072-molecule ESOL benchmark). Values are predicted $\logS$; \textit{italics} indicates a sign-flip (true $\logS < -1$ predicted as $>0$). ``---'' denotes a notation unavailable for that molecule. All true $\logS < -1$ (insoluble).}
+\label{tbl:top10}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccccc}
+\hline
+Rank & Class & True $\logS$ & SMILES & IUPAC & InChI & SELFIES & Spread \\
+\hline
+1  & Halogenated & $-3.88$ & $-4.5$ & $-7.5$ & $-4.5$ & $-1.5$ & 6.00 \\
+2  & Halogenated & $-3.88$ & $-5.2$ & $-7.5$ & $-4.5$ & $-1.5$ & 6.00 \\
+3  & Halogenated & $-3.56$ & $-4.5$ & $-7.5$ & $-5.2$ & $-1.5$ & 6.00 \\
+4  & Halogenated & $-1.76$ & $-4.5$ & $-3.5$ & \textit{$+1.5$} & --- & 6.00 \\
+5  & Halogenated & $-1.84$ & $-4.5$ & $-3.6$ & \textit{$+1.5$} & $-1.5$ & 6.00 \\
+6  & Aromatic    & $-2.64$ & $-4.5$ & $-3.0$ & \textit{$+1.5$} & $-1.5$ & 6.00 \\
+7  & Aromatic    & $-2.31$ & $-4.6$ & \textit{$+1.4$} & $-1.2$ & $-1.5$ & 6.00 \\
+8  & Halogenated & $-1.38$ & $-4.5$ & $-2.5$ & \textit{$+1.2$} & --- & 5.70 \\
+9  & Aromatic    & $-6.62$ & $-10.0$ & $-6.5$ & $-6.5$ & $-4.5$ & 5.50 \\
+10 & Heterocyclic& $-2.39$ & --- & \textit{$+1.8$} & $-3.5$ & $-3.5$ & 5.30 \\
+\hline
+\end{tabular*}
+\end{table*}
+
+\subsection{\DIFdelbegin \DIFdel{Mechanistic analysis: lower-to-middle-layer localisation of notation divergence}\DIFdelend \DIFaddbegin \DIFadd{The effect is robust to metric, threshold, and task formulation}\DIFaddend }
+\DIFaddbegin \label{sec:robust}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{Before intervention, augmented SMILES pairs representing identical molecules differ substantially in their predicted $\logS$: the mean prediction gap is 0.873}\DIFdelend \DIFaddbegin \DIFadd{Three choices in the analysis above could in principle drive the result: the 0.5}\DIFaddend \,$\logS$ \DIFdelbegin %DIFDELCMD < [%%%
+\DIFdel{95\% CI: 0.825, }\DIFdelend \DIFaddbegin \DIFadd{inconsistency threshold, the use of the range rather than a variance-based statistic, and the framing of the task as regression. None of them does.
+}
+
+\textbf{\DIFadd{Threshold.}} \DIFadd{The inconsistency rate declines smoothly and remains substantial across the full plausible range of thresholds: 94.5\% at 0.1}\DIFaddend \,\DIFdelbegin \DIFdel{0.922; median 0.658}\DIFdelend \DIFaddbegin \DIFadd{$\logS$, 93.6\% at 0.25, 88.0\% at 0.5 (as reported above), 80.9\% at 0.75, 61.0\% at 1.0, 46.9\% at 1.5 and 26.3\% at 2.0. Even at a criterion of 1}\DIFaddend \,$\logS$\DIFdelbegin %DIFDELCMD < ] %%%
+\DIFdel{across all 1051 pairs. Representation-level hidden-state replacement reduces this gap in 805 of 1051 pairs (76.6\% }\DIFdelend \DIFaddbegin \DIFadd{---an order of magnitude in molar solubility---a majority of molecules receive materially different predictions depending only on how they are written.
+}
+
+\textbf{\DIFadd{Metric.}} \DIFadd{Computing the standard deviation across all four notation-specific predictions rather than the range gives a mean of 0.830\,$\logS$ (median 0.700) and ranks molecules almost identically to the range (Spearman $\rho=0.987$, $p<10^{-300}$, $n=790$). No conclusion depends on the choice. I note one consequence I report against my own interest: under the standard deviation on the matched complete-case set, halogenated compounds are marginally more inconsistent than carboxylic/ester compounds (0.\,1.094 }\textit{\DIFadd{vs.}}\DIFadd{\ 1.001), so the identification of a single most-inconsistent class is sensitive to metric and subset, and I state the carboxylic/ester result as holding for the full sample under the range metric.
+}
+
+\textbf{\DIFadd{Task formulation.}} \DIFadd{Large language models are known to be imprecise at numerical regression, raising the question of whether the effect is an artefact of that formulation. It is not. Discretising the same predictions into solubility bands and asking only whether the four notations agree on the }\textit{\DIFadd{band}}\DIFadd{, 71.8\% of molecules disagree under a four-band scheme, 45.9\% under a three-band scheme, and 27.8\% under a binary soluble/insoluble split at $\logS=-2$. Band-level accuracy under the binary formulation is 82--90\% across notations, so the model performs the classification competently; the disagreement is not a symptom of numerical imprecision. More than a quarter of molecules receive a different qualitative solubility call depending only on notation.
+}
+
+\subsection{\DIFadd{Notation sensitivity is specific to string-based models}}
+\label{sec:baseline}
+
+\DIFadd{A natural question is whether cross-notation inconsistency reflects something particular to language models or is a general property of molecular machine learning. I tested this directly with a non-sequence baseline: a RandomForest regressor trained on eight standard RDKit molecular descriptors over the same 1072 ESOL molecules (5-fold CV MAE 0.237\,$\logS$). Each molecule was then presented to it through four different string routes---canonical SMILES, a randomised non-canonical SMILES, an InChI round-trip, and a SELFIES round-trip.
+}
+
+\DIFadd{The descriptor model is effectively notation-invariant. Its mean prediction spread across the four string forms is 0.105\,$\logS$, against 1.686\,$\logS$ for Qwen3.6 across four notations, and only 9.8\% of molecules exceed the 0.5\,$\logS$ threshold against 88.0\%. Moreover its residual variation is not notation sensitivity at all: for 79.2\% of molecules every string route yields a bit-identical Morgan fingerprint and therefore an identical prediction, and the remainder are cases where the InChI or SELFIES round-trip altered the molecular graph through tautomer normalisation or loss of stereochemistry---a property of the round-trip, not of the model.
+}
+
+\DIFadd{Cross-notation inconsistency is therefore a property of models that consume molecular }\textit{\DIFadd{strings}}\DIFadd{. A descriptor- or fingerprint-based model cannot exhibit it, because its representation collapses all string forms of a molecule to the same input vector. I note also that the descriptor baseline is considerably more accurate than any language model evaluated here (0.237 against a best notation-specific MAE of 0.887\,$\logS$}\DIFaddend )\DIFaddbegin \DIFadd{; my argument concerns consistency rather than accuracy, but the comparison is important context for practitioners.
+}
+
+\subsection{\DIFadd{The effect replicates on a second property}}
+\label{sec:freesolv}
+
+\DIFadd{To test whether these findings are specific to aqueous solubility, I repeated the behavioural protocol on FreeSolv\mbox{%DIFAUXCMD
+\cite{mobley2014} }\hskip0pt%DIFAUXCMD
+(hydration free energy, kcal\,mol$^{-1}$) using the three notations that can be generated locally (SMILES, InChI, SELFIES). The model performs this task genuinely in all three (Pearson $r=0.646$}\DIFaddend , \DIFdelbegin \DIFdel{with a mean improvement of 0.616}\DIFdelend \DIFaddbegin \DIFadd{$0.599$, $0.460$).
+}
+
+\DIFadd{The effect replicates closely. On FreeSolv 81.9\% of molecules exceed a 0.5-unit three-notation spread, against 83.6\% for the same three notations on ESOL; the mean spread is 3.364}\DIFaddend \,\DIFaddbegin \DIFadd{kcal\,mol$^{-1}$ and 1.404\,}\DIFaddend $\logS$ \DIFaddbegin \DIFadd{respectively, which normalised by the range of each target variable is 14.3\% and 13.0\%. A different property, in different units, over different molecules, yields cross-notation inconsistency of near-identical relative magnitude.
+}
+
+\DIFadd{Importantly, the notation }\textit{\DIFadd{ranking}} \DIFadd{does not transfer. InChI achieves the lowest error on ESOL but the highest of the three on FreeSolv (MAE 3.054 }\textit{\DIFadd{vs.}}\DIFadd{\ 2.596 for SMILES). I therefore present the existence and magnitude of notation sensitivity as generalising, while treating any specific notation recommendation as task-dependent (Section~\ref{sec:recommend}).
+}
+
+\DIFadd{I also attempted the two classification datasets the analysis would ideally include (BBBP and BACE). On both, Qwen3.6 failed to exceed the majority-class baseline in any notation, and its answers were strongly and degenerately notation-biased---on BACE it answered positive for 88.7\% of SMILES prompts but 8.0\% of SELFIES prompts, at 50.0\% accuracy against a 60.0\% majority class. A naive reading of those runs would report 90.0\% cross-notation label disagreement, which I do not, because a model that cannot perform a task cannot be used to measure notation robustness on it. Whether the effect extends to molecular classification therefore remains open, and requires a model demonstrably capable of the task.
+}
+
+\subsection{\DIFadd{Mechanistic analysis: progressive representational divergence with encoder depth}}
+
+\DIFadd{Augmented SMILES pairs representing identical molecules differ substantially in their predicted $\logS$: the mean prediction gap is 0.873\,$\logS$ }\DIFaddend [95\% CI: \DIFdelbegin \DIFdel{0.572}\DIFdelend \DIFaddbegin \DIFadd{0.825}\DIFaddend ,\,\DIFdelbegin \DIFdel{0.661}\DIFdelend \DIFaddbegin \DIFadd{0.922}\DIFaddend ; median \DIFdelbegin \DIFdel{0.374}\DIFdelend \DIFaddbegin \DIFadd{0.658}\DIFaddend \,$\logS$] \DIFdelbegin \DIFdel{. The Wilcoxon signed-rank test confirms the improvement is non-zero (stat\,=\,324415, $p\,=\,1.06\!\times\!10^{-133}$). Critically, no layer replacement at any position degraded the prediction gap: 0/}\DIFdelend \DIFaddbegin \DIFadd{across all }\DIFaddend 1051 \DIFdelbegin \DIFdel{pairs showed negative improvement, confirming that lower-to-middle-layer CLS replacement consistently moves representations toward convergence or leaves them unchanged. The remaining 246 pairs (23.4\%)show no net change, including pairs with negligible initial divergence.
+}\DIFdelend \DIFaddbegin \DIFadd{pairs. }\DIFaddend The mean \DIFdelbegin \DIFdel{improvement (0.616\,$\logS$) is smaller than the prediction head's cross-validated MAE (0.783\,$\logS$), indicating a real but modest effect relative to the head's intrinsic prediction noise. The consistent direction (0/1051 negative; $p\,=\,1.06\!\times\!10^{-133}$)establishes the effect beyond doubt; the Wilcoxon test, not point comparison with the MAE, is the appropriate evidential standard here. The mean }\DIFdelend final-layer cosine similarity between pairs is 0.660 [95\% CI: 0.644,\,0.676], substantially below 1.0, confirming that chemically equivalent SMILES occupy meaningfully different positions in the learned embedding space.
+
+\DIFaddbegin \DIFadd{Tracing CLS cosine similarity across all seven hidden-state positions shows that this separation accumulates monotonically with depth rather than arising at any single layer (Fig.~\ref{fig:layers}). Mean similarity falls from 0.9868 at $L_1$ through 0.9228, 0.8584, 0.8040 and 0.7548 to 0.6597 at the final layer, with the largest single decrements between $L_1$ and $L_3$ and at the final layer. Taking a similarity of 0.85 as a divergence threshold, 663 of 1051 pairs cross it, and onset is concentrated at $L_2$ (186 pairs) and $L_3$ (303 pairs). The embedding position is identical for every molecule in the dataset (cosine 1.0000, s.d.\ 0.0000) because the pre-attention CLS state is a function of token and position embeddings alone; it therefore carries no molecular information and is excluded from all subsequent analysis.
+}
+
+\DIFadd{Representational divergence predicts the behavioural quantity. Cosine similarity correlates negatively with the prediction gap at every layer, strengthening with depth to Spearman $\rho\,=\,-0.371$ ($p\,=\,1.4\!\times\!10^{-35}$, $n=1051$) at the final layer, with monotone dose-response across similarity quintiles: mean gap rises from 0.324\,$\logS$ among the most-similar fifth of pairs to 1.129\,$\logS$ among the least-similar. Molecules whose two notations are encoded more similarly receive more consistent predictions.
+}
+
+\DIFaddend Table~\ref{tbl:phase2} breaks down \DIFdelbegin \DIFdel{mechanistic }\DIFdelend \DIFaddbegin \DIFadd{these }\DIFaddend results by structural class. Aromatic compounds show \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{both the lowest mean cosine similarity (0.417) and the }\DIFaddend largest mean gap (\DIFdelbegin \DIFdel{1.12}\DIFdelend \DIFaddbegin \DIFadd{1.120}\DIFaddend \,$\logS$)\DIFdelbegin \DIFdel{and greatest improvement (0.85}\DIFdelend \DIFaddbegin \DIFadd{, with heterocyclic compounds close behind (0.573; 1.029}\DIFaddend \,$\logS$)\DIFdelbegin \DIFdel{, suggesting that augmented SMILES of aromatic ring systems diverge substantially in lower-layer representations, and that this divergence substantially contributes to the output difference. Heterocyclic compounds show similarly large gaps (1.03}\DIFdelend \DIFaddbegin \DIFadd{. Halogenated compounds are the most stable on both measures (0.953; 0.429}\DIFaddend \,$\logS$). \DIFdelbegin \DIFdel{Halogenated and carboxylic compounds show smaller gaps, consistent with more similar augmented SMILES for these sub-structures. Modal intervention layers differ by class: $L_0$ for aromatic , $L_1$ for halogenated, $L_4$ for heterocyclic and carboxylic, suggesting that the depth at which notation-surface features consolidate varies with chemical class}\DIFdelend \DIFaddbegin \DIFadd{I offer the interpretation---as a hypothesis rather than an established mechanism---that this ordering reflects where two valid strings for identical chemistry differ most: aromatic ring systems admit both kekulized and lowercase-aromatic forms as well as alternative ring-closure indexing, whereas a halogen atom is represented by a single unambiguous token in either string}\DIFaddend .
+
+\begin{table}[h]
+\small
+\caption{\ Phase\,2 \DIFdelbeginFL \DIFdelFL{mechanistic }\DIFdelendFL results by structural class ($n=1051$ total pairs)\DIFaddbeginFL \DIFaddFL{, using the corrected classification}\DIFaddendFL . Avg.\ \DIFdelbeginFL \DIFdelFL{gap}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{cos}\DIFaddendFL \,=\,mean \DIFdelbeginFL \DIFdelFL{prediction gap before intervention}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{final-layer CLS cosine similarity between notation variants}\DIFaddendFL ; Avg.\ \DIFdelbeginFL \DIFdelFL{impr.}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{gap}\DIFaddendFL \,=\,mean \DIFdelbeginFL \DIFdelFL{improvement after optimal-layer replacement; Mode $L$\,=\,most frequent effective replacement layer (among improved pairs)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{prediction gap}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{Classes are ordered by increasing cosine similarity.}\DIFaddendFL }
+\label{tbl:phase2}
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}lcccc}
+%DIFDELCMD < \hline
+%DIFDELCMD < Class & $n$ & Avg.\ gap & Avg.\ impr. & Mode $L$ \\
+%DIFDELCMD < \hline
+%DIFDELCMD < Heterocyclic & 380 & 1.03 & 0.74 & $L_4$ \\
+%DIFDELCMD < Aromatic     & 293 & 1.12 & 0.85 & $L_0$ \\
+%DIFDELCMD < Halogenated  & 327 & 0.52 & 0.30 & $L_1$ \\
+%DIFDELCMD < Carboxylic   &  51 & 0.56 & 0.35 & $L_4$ \\
+%DIFDELCMD < \hline
+%DIFDELCMD < \end{tabular*}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}lccc}
+\hline
+Class & $n$ & Avg.\ cos & Avg.\ gap \\
+\hline
+Aromatic     & 293 & 0.417 & 1.120 \\
+Heterocyclic & 380 & 0.573 & 1.029 \\
+Aliphatic    &  74 & 0.899 & 0.550 \\
+Alcohol      & 173 & 0.939 & 0.541 \\
+Carboxylic   &  51 & 0.945 & 0.558 \\
+Halogenated  &  73 & 0.953 & 0.429 \\
+Amine        &   7 & 0.961 & 0.647 \\
+\hline
+\end{tabular*}
+\DIFaddendFL \end{table}
+
+\begin{figure}[h]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \begin{tikzpicture}
+%DIFDELCMD < \begin{axis}[
+%DIFDELCMD <   ybar, bar width=0.35cm, bar shift=0pt,
+%DIFDELCMD <   symbolic x coords={$L_0$,$L_1$,$L_2$,$L_3$,$L_4$,$L_5$},
+%DIFDELCMD <   xtick={$L_0$,$L_1$,$L_2$,$L_3$,$L_4$,$L_5$},
+%DIFDELCMD <   width=0.46\textwidth, height=3.5cm,
+%DIFDELCMD <   ymin=0, ymax=30,
+%DIFDELCMD <   ylabel={\% of improved pairs},
+%DIFDELCMD <   ylabel style={font=\scriptsize\sffamily},
+%DIFDELCMD <   xticklabel style={font=\scriptsize\sffamily},
+%DIFDELCMD <   yticklabel style={font=\scriptsize\sffamily},
+%DIFDELCMD <   tick align=inside,
+%DIFDELCMD <   axis line style={color=rscblue!40},
+%DIFDELCMD <   title={\sffamily\scriptsize Effective replacement layer distribution ($n=805$ improved pairs)},
+%DIFDELCMD <   title style={font=\scriptsize\sffamily},
+%DIFDELCMD < ]
+%DIFDELCMD < \addplot[fill=rscblue!60, draw=rscblue] coordinates {
+%DIFDELCMD <   ($L_0$,18.3) ($L_1$,19.5) ($L_2$,17.0) ($L_3$,8.1) ($L_5$,14.4)
+%DIFDELCMD < };
+%DIFDELCMD < % Highlight L4 as modal
+%DIFDELCMD < \addplot[fill=red!50, draw=red!70] coordinates {($L_4$,22.7)};
+%DIFDELCMD < \end{axis}
+%DIFDELCMD < \end{tikzpicture}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tikzpicture}
+\begin{axis}[
+  width=0.46\textwidth, height=4.0cm,
+  xmin=0, xmax=6, ymin=0.6, ymax=1.02,
+  xtick={0,1,2,3,4,5,6},
+  xticklabels={$L_0$,$L_1$,$L_2$,$L_3$,$L_4$,$L_5$,$L_6$},
+  ylabel={Mean CLS cosine similarity},
+  xlabel={Hidden-state position},
+  ylabel style={font=\scriptsize\sffamily},
+  xlabel style={font=\scriptsize\sffamily},
+  xticklabel style={font=\scriptsize\sffamily},
+  yticklabel style={font=\scriptsize\sffamily},
+  tick align=inside,
+  axis line style={color=rscblue!40},
+  grid=major, grid style={color=rscblue!12},
+  title={\sffamily\scriptsize Representational divergence across encoder depth ($n=1051$ pairs)},
+  title style={font=\scriptsize\sffamily},
+]
+\addplot[color=rscblue, mark=*, mark size=1.6pt, thick] coordinates {
+  (0,1.0000) (1,0.9868) (2,0.9228) (3,0.8584) (4,0.8040) (5,0.7548) (6,0.6597)
+};
+% Divergence threshold
+\addplot[color=red!60, dashed, thick, forget plot] coordinates {(0,0.85) (6,0.85)};
+\node[font=\scriptsize\sffamily, color=red!70, anchor=west] at (axis cs:4.1,0.885) {threshold 0.85};
+\end{axis}
+\end{tikzpicture}
+\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{Distribution of most effective replacement layers across 805 improved }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Mean CLS cosine similarity between chemically identical SMILES }\DIFaddendFL pairs \DIFaddbeginFL \DIFaddFL{at each hidden-state position ($n=1051$)}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{$L_4$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Similarity decreases monotonically with depth. $L_0$ }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{modal }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{identical by construction }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{22.7\%}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{s.d.\ 0.0000}\DIFaddendFL ), \DIFdelbeginFL \DIFdelFL{$L_3$ is }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{as }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{relative minimum (8.1\%)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{pre-attention CLS state does not depend on the input molecule}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{The broad distribution across $L_0$--$L_4$ indicates notation-surface features are encoded diffusely across lower-to-middle encoder layers rather than }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Onset of divergence below 0.85 concentrates }\DIFaddendFL at \DIFdelbeginFL \DIFdelFL{a single position}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$L_2$--$L_3$}\DIFaddendFL .}
+\label{fig:layers}
+\end{figure}
+
+\DIFdelbegin \DIFdel{Across all 1051 pairs, the most frequently effective replacement layers are $L_4$ (183/805 improved pairs; 22.7\%), }\DIFdelend \DIFaddbegin \DIFadd{Single-layer hidden-state replacement narrows this divergence only marginally. Reporting the full per-layer distribution before any selection, mean improvement is $-0.006$, $-0.012$, $+0.089$, $+0.038$ and $+0.096$\,$\logS$ at }\DIFaddend $L_1$ \DIFdelbegin \DIFdel{(157; 19.5\%), $L_0$ (147; 18.3\%), $L_2$ (137; 17.0\%), }\DIFdelend \DIFaddbegin \DIFadd{through }\DIFaddend $L_5$ \DIFdelbegin \DIFdel{(116; 14.4\% )}\DIFdelend \DIFaddbegin \DIFadd{respectively, with 49.1\%}\DIFaddend , \DIFaddbegin \DIFadd{50.0\%, 44.1\%, 45.7\% }\DIFaddend and \DIFaddbegin \DIFadd{42.9\% of pairs degraded at each layer. One-sided Wilcoxon signed-rank tests against zero, Bonferroni-corrected for five comparisons ($\alpha=0.01$), find a significant positive effect at }\DIFaddend $L_3$ (\DIFdelbegin \DIFdel{65; 8.1\%) }\DIFdelend \DIFaddbegin \DIFadd{$p=6.1\!\times\!10^{-6}$) and $L_5$ ($p=4.7\!\times\!10^{-5}$), a marginal effect at $L_4$ }\DIFaddend (\DIFdelbegin \DIFdel{Fig.~\ref{fig:layers}). The distribution is broad across L0--L4, with $L_3$ as the only relative minimum. This pattern supports the hypothesis that notation-surface features are encoded diffusely across lower-to-middle attention layers rather than at a single localised position, while L5 (the final encoder layer) is least often the sole effective intervention point.
+The 246 pairs showing no net improvement include those with negligible initial divergence; these are distinct from pairs with distributed representational divergence (identified by the absence of any effective }\DIFdelend \DIFaddbegin \DIFadd{$p=8.97\!\times\!10^{-3}$), and no effect at $L_1$ or $L_2$. The effect at the responsive layers is real but small: the largest mean improvement (0.096\,$\logS$ at $L_5$) recovers approximately 11\% of the mean prediction gap and lies well below the prediction head's own cross-validated MAE of 0.783\,$\logS$, and even at this layer 42.9\% of individual pairs are made worse. Middle-to-late layers therefore carry some of the information responsible for divergence, but no }\DIFaddend single-layer \DIFdelbegin \DIFdel{intervention). }\DIFdelend \DIFaddbegin \DIFadd{intervention approaches reconciling the two representations.
+}\DIFaddend 
+
+\DIFaddbegin \DIFadd{I note that the final position cannot serve as an intervention site at all: because the prediction head reads the final-layer CLS state, replacing it substitutes the source molecule's prediction wholesale, and the resulting ``improvement'' equals the unpatched gap to within $5\!\times\!10^{-5}$ for all 1051 pairs. Both the embedding and final positions are therefore excluded, and only $L_1$--$L_5$ are analysed as interventions.
+}
+
+\subsubsection{\DIFadd{Controls.~~}} \DIFadd{To establish that these effects are not artifacts of the intervention procedure, I ran four controls over all 1051 pairs at each of $L_1$--$L_5$. Replacing a molecule's CLS state with its own (canonical control) produces a deviation of exactly zero at every layer, for every pair, confirming that the hook mechanism, CLS substitution as such, and the Ridge head introduce no effect of their own. Replacing with an unrelated molecule's state is by contrast strongly damaging, and increasingly so with depth ($-0.076$, $-0.223$, $-0.458$, $-0.688$, $-0.826$\,$\logS$ at $L_1$--$L_5$). The reversed-direction control is approximately neutral ($+0.008$ to $-0.092$\,$\logS$).
+}
+
+\DIFadd{The contrast between true-partner and random-molecule replacement is the informative quantity. True-partner substitution outperforms random-molecule substitution at every layer, and the margin grows monotonically with depth, from $+0.070\,\logS$ at $L_1$ to $+0.922\,\logS$ at $L_5$ (Wilcoxon $p$ from $3.2\!\times\!10^{-10}$ to $1.1\!\times\!10^{-80}$; Spearman $\rho=1.000$ for margin against depth; true exceeds random in 58.7\% of pairs at $L_1$ rising to 75.5\% at $L_5$). Diverged representations therefore remain strongly molecule-specific: the encoder retains information identifying which molecule it is reading, and increasingly so through depth, even as the two notations' representations separate. Taken with the preceding result---that substituting this shared information recovers only a small fraction of the prediction gap---this locates cross-notation inconsistency as a failure to converge on a common encoding rather than a loss of chemical identity. I note that this control excludes hook-mechanism and head artifacts but does not establish that cross-molecule substitution remains on the model's activation manifold; I return to this limitation in Section~4.
+}
+
+\DIFaddend \subsection{Consistency and accuracy are orthogonal}
+
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend observe Spearman $\rho = -0.059$ ($p=0.055$; $n=1051$) between per-pair cross-notation gap and absolute prediction error---no significant correlation. At this sample size, a Spearman test has $>80\%$ power to detect $|\rho|\geq 0.086$; the estimated $\rho=-0.059$ falls well below this detectable threshold, indicating that any true correlation is negligibly small even if it exists. The slightly negative $\rho$ is consistent with inconsistent pairs spanning wider prediction ranges, occasionally landing closer to the true value by chance. This result replicates the key finding of Yan \textit{et al.}\cite{yan2025}---who demonstrated the same orthogonality at LLM output level---and, to \DIFdelbegin \DIFdel{our }\DIFdelend \DIFaddbegin \DIFadd{my }\DIFaddend knowledge, is the first demonstration at the level of encoder CLS representations ($n=1051$ pairs): a SMILES encoder that produces similar embeddings for augmented pairs does not systematically yield more accurate $\logS$ predictions. Conversely, high SMILES accuracy cannot be taken as evidence that the encoder has internalised a notation-robust molecular concept.
+
+This orthogonality has a direct and important practical implication: \textbf{fine-tuning on accuracy metrics alone will not solve notation inconsistency.} Because inconsistency and inaccuracy are statistically independent ($\rho=-0.059$, $p=0.055$), optimising a model's loss on SMILES-based accuracy benchmarks applies no gradient pressure to reduce cross-notation divergence. A model could achieve state-of-the-art SMILES MAE while still producing predictions that differ by $>2\,\logS$ when the same molecule is presented in InChI or SELFIES format. Resolving this requires either dedicated consistency training objectives---such as consistency regularisation across notation pairs---or notation-invariant representations enforced at the architecture level. Standard accuracy benchmarks, which almost exclusively use SMILES,\cite{ganeeva2025} are therefore insufficient to characterise model understanding, and dedicated cross-notation consistency benchmarks are a necessary complement.
+
+\subsection{Practical recommendations}
+\DIFaddbegin \label{sec:recommend}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{Our }\DIFdelend \DIFaddbegin \DIFadd{My }\DIFaddend findings support four actionable recommendations for practitioners using LLMs for molecular property prediction.
+
+\begin{enumerate}
+\item \textbf{Choose notation based on the error type you wish to \DIFdelbegin \DIFdel{minimise}\DIFdelend \DIFaddbegin \DIFadd{minimise---and on the chemistry at hand}\DIFaddend .} SELFIES achieves the lowest \DIFaddbegin \DIFadd{overall }\DIFaddend sign-flip rate \DIFdelbegin \DIFdel{across all structural classes }\DIFdelend (1.7\%\DIFdelbegin \DIFdel{overall}\DIFdelend ; a rate 3.2$\times$ lower than SMILES; OR\,=\,3.34 for SMILES relative to SELFIES, $p\,=\,6.2\!\times\!10^{-6}$) and is the safest choice when catastrophic solubility-sign reversals are the primary concern---particularly for heterocyclic (0/378 SELFIES sign-flips)\DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend carboxylic/ester (0/51) \DIFdelbegin \DIFdel{compounds. InChI }\DIFdelend \DIFaddbegin \DIFadd{and aromatic (1/267) compounds. This advantage is not universal, however: for alcohol/phenol compounds InChI is safer (0/166 }\textit{\DIFadd{vs.}}\DIFadd{\ 7/153), and for halogenated compounds SMILES is safer than SELFIES (10.7\% }\textit{\DIFadd{vs.}}\DIFadd{\ 15.7\%). InChI }\DIFaddend achieves the lowest MAE (0.887\,$\logS$; 21.4\% lower than SMILES MAE of 1.127\,$\logS$) and is preferable when minimising average prediction error across the full dynamic range is the priority. IUPAC should be used with \DIFdelbegin \DIFdel{caution: despite intermediate MAE (1.038\,$\logS$), it carries the highest }\DIFdelend \DIFaddbegin \DIFadd{particular caution for halogenated compounds, where its }\DIFaddend sign-flip rate \DIFdelbegin \DIFdel{of any notation (}\DIFdelend \DIFaddbegin \DIFadd{reaches 36.2\% against an overall rate of }\DIFaddend 7.3\%\DIFdelbegin \DIFdel{; 4.3$\times$ higher than SELFIES)}\DIFdelend .
+\item \textbf{Report the input notation explicitly} in LLM chemistry methods sections. Notation is a hidden confound: switching from SMILES to IUPAC can shift predicted $\logS$ by up to 6.00 units for individual molecules (Table~\ref{tbl:top10}) and by a mean of $\sim$2.15\,$\logS$ for carboxylic/ester compounds. Without notation disclosure, published LLM solubility benchmarks are not directly comparable.
+\item \textbf{Do not use single-notation accuracy as a proxy for molecular understanding.} Because consistency and accuracy are orthogonal (Spearman $\rho=-0.059$, $p=0.055$, $n=1051$), high SMILES accuracy provides no guarantee of generalisation to other representations. Fine-tuning on accuracy metrics alone will not close the cross-notation consistency gap.
+\item \textbf{\DIFdelbegin \DIFdel{Prioritise lower-to-middle encoder layers for notation-robustness interventions}\DIFdelend \DIFaddbegin \DIFadd{Target representational convergence, not output agreement}\DIFaddend .} \DIFdelbegin \DIFdel{Our mechanistic results (76.6\% of pairs improved; 0/1051 degraded) show that L0--L4 of ChemBERTa-2 encode the notation-surface features responsible for divergence . Consistency regularisation applied at these layers---rather than at the output head---is the }\DIFdelend \DIFaddbegin \DIFadd{My mechanistic results show that divergence between notations accumulates progressively with encoder depth and is already substantial by $L_2$--$L_3$, and that no single-layer intervention reverses it. Because diverged representations nonetheless retain molecule-specific information, the }\DIFaddend architecturally motivated target for \DIFdelbegin \DIFdel{future }\DIFdelend notation-robust pre-training \DIFaddbegin \DIFadd{is a consistency objective applied across intermediate layers---encouraging convergence as representations are built---rather than a penalty on output disagreement alone, which my orthogonality result indicates accuracy-driven training will not supply}\DIFaddend .
+\end{enumerate}
+
+\subsection*{Limitations}
+
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend test a single general-purpose LLM; results may differ for chemistry-fine-tuned models. Phase\,2 uses within-SMILES augmented pairs rather than true cross-notation pairs, because ChemBERTa-2 is a SMILES-only encoder; a full cross-notation mechanistic study would require a multi-notation foundation model such as a jointly trained SMILES/IUPAC encoder. Phase\,1 covers 1072 of 1128 ESOL molecules (94.9\%); 56 molecules were excluded due to PubChem API lookup failures. Phase\,2 covers 1051 valid augmented-SMILES pairs, providing high statistical power throughout.
+
+\section*{Conclusions}
+
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend have demonstrated that notation inconsistency in LLM-based molecular property prediction is (i) pervasive---affecting 88.0\% of 1072 ESOL molecules with a mean four-notation spread of 1.69\,$\logS$ (median 1.30\,$\logS$), occurring even when the model is explicitly informed of the notation type; (ii) structurally moderated---carboxylic/ester compounds being most severely affected (mean spread 2.15\,$\logS$; Kruskal--Wallis \DIFdelbegin \DIFdel{$p=1.5\!\times\!10^{-7}$}\DIFdelend \DIFaddbegin \DIFadd{$p=1.2\!\times\!10^{-7}$}\DIFaddend ); (iii) notation-specifically modulated: SELFIES achieves the lowest \DIFaddbegin \DIFadd{overall }\DIFaddend sign-flip rate \DIFdelbegin \DIFdel{across all structural classes }\DIFdelend (1.7\% \textit{vs.}\ 5.4\% for SMILES; OR\,=\,3.34, $p=6.2\!\times\!10^{-6}$) \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{and the lowest rate in most structural classes, though not in alcohol/phenol or halogenated compounds, }\DIFaddend while InChI achieves the lowest MAE (0.887\,$\logS$), revealing that error type\DIFdelbegin \DIFdel{and notation choice }\DIFdelend \DIFaddbegin \DIFadd{, notation choice and structural class }\DIFaddend are jointly important; and (iv)---crucially, going beyond prior purely behavioural work\cite{yan2025,ganeeva2025}---mechanistically \DIFdelbegin \DIFdel{distributed across lower-to-middle transformer layers (L0--L4; }\DIFdelend \DIFaddbegin \DIFadd{traceable to a progressive failure of representational convergence (}\DIFaddend $n=1051$ augmented-SMILES pairs\DIFdelbegin \DIFdel{; 76.6\% improved, 0/1051 degraded; Wilcoxon $p=1.06\!\times\!10^{-133}$). This mechanistic finding is the first to provide an architectural locus for notation }\DIFdelend \DIFaddbegin \DIFadd{): CLS representations of chemically identical strings separate monotonically with encoder depth, with onset at $L_2$--$L_3$ and final-layer cosine similarity of 0.660, and the degree of separation predicts the magnitude of prediction disagreement (Spearman $\rho=-0.371$; $p=1.4\!\times\!10^{-35}$). Controls show that diverged representations remain molecule-specific---substitution by an unrelated molecule is markedly more damaging than substitution by the true notation partner at every layer---yet no single-layer replacement closes the prediction gap. Notation }\DIFaddend divergence in a chemistry encoder \DIFdelbegin \DIFdel{, showing that notation-surface features are encoded diffusely in lower-to-middle attention layers }\DIFdelend \DIFaddbegin \DIFadd{is therefore better characterised as a failure to converge on a shared encoding than as a loss of chemical identity, which locates the problem in how representations are built across depth }\DIFaddend rather than at any single \DIFdelbegin \DIFdel{position---an actionable target for notation-robust pre-training strategies}\DIFdelend \DIFaddbegin \DIFadd{position}\DIFaddend . The orthogonality of inconsistency and inaccuracy (Spearman $\rho=-0.059$; $p=0.055$; $n=1051$) confirms that fine-tuning on accuracy metrics alone cannot resolve the cross-notation consistency problem. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{I }\DIFaddend advocate for standardised notation reporting in LLM chemistry benchmarks, and recommend selecting input notation based on the specific error type to minimise: SELFIES for sign-flip safety, InChI for average accuracy.
+
+\section*{Author contributions}
+
+A.~Mishra: conceptualisation, methodology, software, investigation, data curation, formal analysis, visualisation, writing---original draft, writing---review and editing.
+
+\section*{Conflicts of interest}
+
+There are no conflicts to declare.
+
+\section*{Data availability}
+
+The experimental scripts (07\_full\_esol\_phase1.py, 08\_full\_esol\_phase2.py), batch execution pipeline (run\_full\_benchmark.sh), complete documentation, and article LaTeX source are publicly available without embargo at https://github.com/amethystani/notation-matters. Ground-truth $\logS$ values are from the ESOL dataset.\cite{delaney2004} All code can be executed to reproduce experimental results; the ESOL dataset is retrieved dynamically via the PubChem REST API.
+
+\section*{Acknowledgements}
+
+The author thanks Shiv Nadar Institution of Eminence for providing the computational resources used in this work. The developers of Qwen3.6, ChemBERTa-2, SELFIES, and Ollama are acknowledged for open-source access to their tools. This work received no specific grant funding from public, commercial, or not-for-profit funding agencies. No AI-assisted writing tools were used in the preparation of this manuscript.
+
+%%%END OF MAIN TEXT%%%
+
+\balance
+
+%%%REFERENCES%%%
+\bibliography{rsc}
+\bibliographystyle{rsc}
+
+\end{document}
