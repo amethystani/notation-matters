@@ -1,0 +1,95 @@
+{
+  "n_molecules": 1072,
+  "spread_4notation": {
+    "mean": 1.686473880597015,
+    "ci_95_lo": 1.6176212686567164,
+    "ci_95_hi": 1.7571875000000001,
+    "median": 1.3,
+    "n_inconsistent": 943,
+    "pct_inconsistent": 87.96641791044776
+  },
+  "spread_3notation": {
+    "mean": 1.2438735177865612,
+    "ci_95_lo": 1.1804298418972332,
+    "ci_95_hi": 1.3053384387351779,
+    "median": 1.0,
+    "n_inconsistent": 758,
+    "pct_inconsistent": 74.90118577075098
+  },
+  "per_notation": {
+    "SMILES": {
+      "n": 969,
+      "mae": 1.1272579979360164,
+      "sign_flips": 52,
+      "sign_flip_pct": 5.366357069143446
+    },
+    "IUPAC": {
+      "n": 1000,
+      "mae": 1.038011,
+      "sign_flips": 73,
+      "sign_flip_pct": 7.3
+    },
+    "InChI": {
+      "n": 993,
+      "mae": 0.8870604229607251,
+      "sign_flips": 33,
+      "sign_flip_pct": 3.3232628398791544
+    },
+    "SELFIES": {
+      "n": 958,
+      "mae": 1.1359926931106472,
+      "sign_flips": 16,
+      "sign_flip_pct": 1.6701461377870561
+    }
+  },
+  "fisher_exact_SMILES_vs_SELFIES": {
+    "OR": 3.3386041439476553,
+    "pval": 6.1802548322723105e-06
+  },
+  "kruskal_wallis": {
+    "H": 34.55195061229787,
+    "pval": 1.5148853644824893e-07
+  },
+  "class_stats": {
+    "carboxylic/ester": {
+      "n": 51,
+      "mean_spread": 2.152941176470588,
+      "median_spread": 2.0,
+      "n_inconsistent": 47,
+      "sign_flips_SMILES": 4,
+      "sign_flips_SELFIES": 0,
+      "n_SMILES": 50,
+      "n_SELFIES": 51
+    },
+    "halogenated": {
+      "n": 327,
+      "mean_spread": 1.827217125382263,
+      "median_spread": 1.5,
+      "n_inconsistent": 277,
+      "sign_flips_SMILES": 21,
+      "sign_flips_SELFIES": 15,
+      "n_SMILES": 308,
+      "n_SELFIES": 262
+    },
+    "aromatic": {
+      "n": 267,
+      "mean_spread": 1.8243445692883895,
+      "median_spread": 1.7,
+      "n_inconsistent": 232,
+      "sign_flips_SMILES": 12,
+      "sign_flips_SELFIES": 1,
+      "n_SMILES": 223,
+      "n_SELFIES": 267
+    },
+    "heterocyclic": {
+      "n": 427,
+      "mean_spread": 1.436768149882904,
+      "median_spread": 1.3,
+      "n_inconsistent": 387,
+      "sign_flips_SMILES": 15,
+      "sign_flips_SELFIES": 0,
+      "n_SMILES": 388,
+      "n_SELFIES": 378
+    }
+  }
+}

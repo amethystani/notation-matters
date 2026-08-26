@@ -1,0 +1,260 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2.2cm,right=2.2cm,top=2.2cm,bottom=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{caption}
+
+\definecolor{rscblue}{RGB}{0,83,156}
+\definecolor{codebg}{RGB}{246,248,249}
+\newcommand{\logS}{\ensuremath{\log S}}
+
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{codebg},
+  frame=single, rulecolor=\color{black!25},
+  breaklines=true, columns=fullflexible,
+  keywordstyle=\color{rscblue}, commentstyle=\color{black!55}\itshape,
+  language=Python, showstringspaces=false, xleftmargin=4pt, framexleftmargin=4pt,
+}
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\title{\vspace{-1.5cm}\large\textbf{Supplementary Information}\\[4pt]
+\normalsize Notation matters: cross-representation inconsistency in chemistry\\
+language models and its mechanistic origins}
+\author{\normalsize Animesh Mishra}
+\date{\small Manuscript DD-COM-05-2026-000309}
+
+\begin{document}
+\maketitle
+\vspace{-0.6cm}
+\noindent\rule{\textwidth}{0.5pt}
+
+\noindent This document provides the verification material referenced in the response to referees: the
+corrected structural classification and the script that generates it, the model validity screening
+results, the full per-layer intervention distribution and controls, the robustness analyses, and the
+outcome of every additional dataset evaluated, including those that failed screening and are therefore
+not reported in the main text.
+
+\section{Corrected structural classification}
+
+The structural-class assignment in the submitted version used
+\texttt{re.search(r'[FClBrI]', s)} for the halogen rule. In regular-expression syntax the square
+brackets define a character class matching any single character among \texttt{F}, \texttt{C},
+\texttt{l}, \texttt{B}, \texttt{r}, \texttt{I}; because \texttt{C} occurs in nearly all organic
+SMILES, most molecules matched. The corrected rule tests for the element tokens explicitly.
+
+Because assignment is priority-ordered, the defect can only affect classes evaluated \emph{after}
+the halogen rule. Table~\ref{tab:cls} gives the full comparison over all 1128 ESOL molecules.
+
+\begin{table}[h]
+\centering
+\caption{Class assignment under the original and corrected classifiers, all 1128 ESOL molecules.
+The three classes matched upstream of the corrected rule have identical membership.}
+\label{tab:cls}
+\small
+\begin{tabular}{lrrrl}
+\toprule
+Class & Original & Corrected & $\Delta$ & Position in priority chain \\
+\midrule
+heterocyclic      & 433 & 433 & $0$    & 1st --- upstream, unaffected \\
+aromatic          & 293 & 293 & $0$    & 2nd --- upstream, unaffected \\
+carboxylic/ester  &  51 &  51 & $0$    & 3rd --- upstream, unaffected \\
+halogenated       & 351 &  76 & $-275$ & 4th --- the corrected rule \\
+alcohol/phenol    &   0 & 179 & $+179$ & downstream \\
+aliphatic         &   0 &  89 & $+89$  & downstream \\
+amine             &   0 &   7 & $+7$   & downstream \\
+\midrule
+\multicolumn{4}{l}{Molecules whose class changes} & 275 of 1128 (24.4\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The script below reproduces Table~\ref{tab:cls} and recomputes all class-stratified
+statistics from the deposited Phase~1 predictions, without re-running model inference.
+
+\begin{lstlisting}
+def classify_original(smiles):          # as submitted
+    s = smiles
+    if re.search(r'[nNsS].*\d|\d.*[nNsS]', s):            return "heterocyclic"
+    if re.search(r'[a-z]', s) and re.search(r'\d', s):    return "aromatic"
+    if 'C(=O)O' in s or 'C(O)=O' in s or 'OC(=O)' in s:   return "carboxylic/ester"
+    if re.search(r'[FClBrI]', s):                          return "halogenated"   # DEFECT
+    if re.search(r'(?<![a-z])O(?![a-z=\(])', s):          return "alcohol/phenol"
+    if re.search(r'(?<![a-z])N(?![a-z=\(+])', s):         return "amine"
+    return "aliphatic"
+
+def classify(smiles):                   # corrected
+    s = smiles
+    if re.search(r'[nNsS].*\d|\d.*[nNsS]', s):            return "heterocyclic"
+    if re.search(r'[a-z]', s) and re.search(r'\d', s):    return "aromatic"
+    if 'C(=O)O' in s or 'C(O)=O' in s or 'OC(=O)' in s:   return "carboxylic/ester"
+    if re.search(r'Cl|Br|F|I', s):                         return "halogenated"   # FIXED
+    if re.search(r'(?<![a-z])O(?![a-z=\(])', s):          return "alcohol/phenol"
+    if re.search(r'(?<![a-z])N(?![a-z=\(+])', s):         return "amine"
+    return "aliphatic"
+\end{lstlisting}
+
+\noindent Full script: \texttt{09\_reclassify\_phase1.py} in the deposited repository. Run as
+\texttt{python3 09\_reclassify\_phase1.py phase1\_full\_results.json}.
+
+\section{Model validity screening}
+
+A model that emits a near-constant value irrespective of input will show a sign-flip rate determined
+by the sign of that constant rather than by any property of the notation, and will appear spuriously
+notation-robust. Every model is therefore screened on two per-notation diagnostics: the modal
+fraction (share of predictions taking the single most frequent value) and the correlation between
+predictions and ground truth. A low count of \emph{distinct} values is not itself evidence of
+degeneracy, since a model answering on a coarse grid legitimately reuses values.
+
+\begin{table}[h]
+\centering
+\caption{Validity screening. Only the model reported in the main text passes.}
+\label{tab:valid}
+\small
+\begin{tabular}{llrrl}
+\toprule
+Model & Family / precision & Modal frac. & Pearson $r$ & Outcome \\
+\midrule
+qwen3.6:35b-a3b   & Qwen3 MoE, native & 21.1\% & $+0.755$ & \textbf{pass} \\
+nous-hermes2:34b  & Llama, 34\,B      & 88.8\% & $+0.197$ & fail \\
+qwen2.5:7b        & Qwen2.5, 7\,B     & 42.5\% & $+0.055$ & fail \\
+hauhau-q4         & Qwen3 MoE, 4-bit  & ---    & ---      & fail (4/40 parseable) \\
+hauhau-iq2        & Qwen3 MoE, 2-bit  & 30.8\% & $-0.177$ & fail \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent \textbf{Retrospective validation of the reported model.} Applied to the deposited Phase~1
+predictions, Qwen3.6 gives modal fractions of 19.9\% (SMILES), 13.0\% (IUPAC), 20.1\% (InChI) and
+23.7\% (SELFIES), with Pearson $r = 0.726$, $0.774$, $0.753$, $0.617$ and Spearman
+$\rho = 0.776$, $0.831$, $0.829$, $0.662$ (all $p < 10^{-100}$).
+
+\noindent \textbf{Discarded run.} nous-hermes2:34b returned a single identical value for all 181
+SELFIES prompts and the same value for 88.8\% of SMILES prompts. Read naively it yields 98.9\%
+cross-notation inconsistency and a 0\% SELFIES sign-flip rate --- both artifacts of differing
+constants per notation. These figures are not reported in the main text.
+
+\section{Full per-layer intervention distribution and controls}
+
+Table~\ref{tab:layers} reports every intermediate layer before any selection, answering the concern
+that selecting the maximum-improvement layer guarantees a non-negative result.
+
+\begin{table}[h]
+\centering
+\caption{Per-layer intervention effects and controls, all 1051 augmented-SMILES pairs.
+Improvement in $\logS$; positive values narrow the prediction gap.}
+\label{tab:layers}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Layer & True partner & Random molecule & Reversed & Canonical & \% pairs degraded \\
+\midrule
+$L_1$ & $-0.006$ & $-0.076$ & $+0.008$ & $0.000000$ & 49.1\% \\
+$L_2$ & $-0.012$ & $-0.223$ & $-0.086$ & $0.000000$ & 50.0\% \\
+$L_3$ & $+0.089$ & $-0.458$ & $-0.092$ & $0.000000$ & 44.1\% \\
+$L_4$ & $+0.038$ & $-0.688$ & $-0.009$ & $0.000000$ & 45.7\% \\
+$L_5$ & $+0.096$ & $-0.826$ & $+0.000$ & $0.000000$ & 42.9\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent \textbf{Off-manifold check.} The canonical control replaces a molecule's CLS state with its
+own. It produces a deviation of exactly zero at every layer for all 1051 pairs (0 pairs nonzero),
+excluding the hook mechanism, CLS substitution as such, and the Ridge head as sources of the observed
+effects. This does not establish that cross-molecule substitution remains on the activation manifold,
+and the main text states that limitation.
+
+\noindent \textbf{Specificity.} True-partner substitution exceeds random-molecule substitution at
+every layer, with the margin growing monotonically with depth: $+0.070$, $+0.211$, $+0.548$, $+0.726$,
+$+0.922\,\logS$ at $L_1$--$L_5$ (Wilcoxon $p$ from $3.2\times10^{-10}$ to $1.1\times10^{-80}$;
+Spearman $\rho = 1.000$ for margin against depth).
+
+\noindent \textbf{Degenerate positions.} The embedding position is identical for every molecule
+(cosine $1.0000$, s.d.\ $0.0000$), since the pre-attention CLS state does not depend on the input.
+The final position is tautological as an intervention: the prediction head reads it, so replacing it
+substitutes the source molecule's prediction wholesale, and the resulting ``improvement'' equals the
+unpatched gap to within $5\times10^{-5}$ for all 1051 pairs. Both are excluded.
+
+\section{Robustness of the behavioural effect}
+
+\begin{table}[h]
+\centering
+\caption{Sensitivity of the inconsistency rate to the spread threshold ($n=1072$), and to
+reformulating the task as classification ($n=790$ complete cases).}
+\label{tab:robust}
+\small
+\begin{tabular}{lr@{\hskip 2cm}lr}
+\toprule
+Threshold ($\logS$) & \% inconsistent & Classification scheme & \% disagreeing \\
+\midrule
+0.10 & 94.5\% & 4-band & 71.8\% \\
+0.25 & 93.6\% & 3-band & 45.9\% \\
+0.50 & 88.0\% & 2-band (binary, $\logS=-2$) & 27.8\% \\
+0.75 & 80.9\% & & \\
+1.00 & 61.0\% & \multicolumn{2}{l}{Band accuracy, binary: 82--90\% across notations} \\
+1.50 & 46.9\% & & \\
+2.00 & 26.3\% & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent \textbf{Metric.} The standard deviation across all four notation-specific predictions has
+mean $0.830\,\logS$ (median $0.700$) and ranks molecules almost identically to the range
+(Spearman $\rho = 0.987$, $p < 10^{-300}$, $n = 790$). Under the standard deviation on the matched
+set, halogenated compounds are marginally more inconsistent than carboxylic/ester compounds
+($1.094$ against $1.001$), so the identification of a single most-inconsistent class is sensitive to
+metric and subset; the main text states the carboxylic/ester result as holding for the full sample
+under the range metric.
+
+\noindent \textbf{Non-language-model baseline.} A RandomForest on eight RDKit descriptors
+(5-fold CV MAE $0.237\,\logS$) shows a mean prediction spread of $0.105\,\logS$ across four string
+routes to the same molecule, against $1.686\,\logS$ for the language model, with 9.8\% of molecules
+exceeding the $0.5\,\logS$ threshold against 88.0\%. For 79.2\% of molecules every string route
+yields a bit-identical Morgan fingerprint and therefore an identical prediction.
+
+\section{Additional datasets: all outcomes}
+
+\begin{table}[h]
+\centering
+\caption{Every additional dataset evaluated, including those that failed the validity screen and are
+therefore not reported as evidence in the main text.}
+\label{tab:datasets}
+\small
+\begin{tabular}{llll}
+\toprule
+Dataset & Task & Screen & Outcome \\
+\midrule
+FreeSolv      & regression     & pass ($r = 0.646$, $0.599$, $0.460$) & effect replicates; see below \\
+Lipophilicity & regression     & fail ($r = 0.180$, $0.163$, $0.200$) & not reported \\
+BBBP          & classification & fail (below majority class)          & not reported \\
+BACE          & classification & fail (below majority class)          & not reported \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent \textbf{FreeSolv replication.} 81.9\% of molecules exceed a 0.5-unit three-notation spread,
+against 83.6\% for the same three notations on ESOL. Mean spread is $3.364$\,kcal\,mol$^{-1}$ and
+$1.404\,\logS$ respectively; normalised by the range of each target this is 14.3\% and 13.0\%.
+Notation ranking does not transfer: InChI has the lowest error on ESOL and the highest of the three
+on FreeSolv (MAE $3.054$ against $2.596$ for SMILES).
+
+\noindent \textbf{Classification datasets.} On BACE the model answered positive for 88.7\% of SMILES
+prompts but 8.0\% of SELFIES prompts, at 50.0\% accuracy against a 60.0\% majority class. Read
+naively this gives 90.0\% cross-notation label disagreement. That figure is not reported, because a
+model that cannot perform a task cannot be used to measure notation robustness on it. Whether the
+effect extends to molecular classification therefore remains open.
+
+\vspace{0.6cm}
+\noindent\rule{\textwidth}{0.5pt}
+
+\noindent\small All scripts, per-molecule predictions and control outputs are deposited with the
+article; see the Data availability statement.
+
+\end{document}
