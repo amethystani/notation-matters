@@ -1,0 +1,9 @@
+numpy
+scipy
+scikit-learn
+pandas
+requests
+selfies
+torch
+transformers
+rdkit
